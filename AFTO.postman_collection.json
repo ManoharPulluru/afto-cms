@@ -1,0 +1,2259 @@
+{
+	"info": {
+		"_postman_id": "34e463aa-ad86-40f3-85cd-14698f301b2a",
+		"name": "AFTO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47338798"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Send OTP Via SMS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phoneNumber\": \"+916303411409\",\n    \"businessAccountId\": \"{{businessAccountId}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/customer/send-sms-otp",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"customer",
+								"send-sms-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"otp\": \"4855\",\n    \"customerId\": \"019e5558-8a7d-744e-842c-88e90971b232\",\n    \"phoneNumber\": \"+916303411409\",\n    \"businessAccountId\": \"91182be9-9446-4e29-9ade-b0312b238668\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/customer/verify-sms-otp",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"customer",
+								"verify-sms-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token API",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTliNWEwMS0wZWFkLTc3NzMtYjdlYS0yMTE3ODNiNTRiN2IiLCJidXNpbmVzc0FjY291bnRJZCI6IjkxMTgyYmU5LTk0NDYtNGUyOS05YWRlLWIwMzEyYjIzODY2OCIsInBob25lTnVtYmVyIjoiOTE2MzAzNDExNDA5IiwiY2hhdHdvb3RDb250YWN0SWQiOjEwNjM4LCJyb2xlIjoiY3VzdG9tZXIiLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc2Njc0MTg5Nn0.u9IXPh8ZXzhzmiXXBBj4tcAd9SZEGbXtSp5XPRLTtnk\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/customer/refresh-token",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"customer",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCTS & METADATA",
+			"item": [
+				{
+					"name": "Get Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/categories/?businessAccountId={{businessAccountId}}",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"categories",
+								""
+							],
+							"query": [
+								{
+									"key": "businessAccountId",
+									"value": "{{businessAccountId}}"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:5000/embedded/order/create' \\\r\n--header 'Accept: application/json, text/plain, */*' \\\r\n--header 'embedded-static-token: mw7f8Ch2MSC300bHKEthp9CGZEIJL8A17d7fuYzT1PcROuHNPEVmEFYUyfmDrIFvpHglqusu4OwvUjAKpZM9ptRbAD7UihMOX2u6bZAdIkjLb7iDRqUIozYCi94HlIvoJO2IyX6AWBhacbHiVQE349ruLWwhfPlNXtoUg8xWweWtuHuaZDZD' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"customerName\": \"Manohar Pulluru\",\r\n    \"customerWhatsappNumber\": \"+916303411409\",\r\n    \"businessAccountId\": \"5d118426-7ff9-40d8-a2f1-476d859da48e\",\r\n    \"items\": [\r\n        {\r\n            \"id\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"sectionTitle\": \"Rice\",\r\n            \"itemId\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"itemName\": \"Classic Beef Burger\",\r\n            \"itemDescription\": \"Classic Beef Burger.\",\r\n            \"regPrice\": \"8\",\r\n            \"salePrice\": \"0\",\r\n            \"imageURL\": \"https://storage.googleapis.com/afto-tech-qa2/meta/elastic_data_images_for_meta/fast_food_fiesta_1737706829286/Classic_Beef_Burger.jpg\",\r\n            \"serial_number\": 1,\r\n            \"productTemplateSectionId\": \"20903f70-bc7a-48f0-89fc-07bbede56cf1\",\r\n            \"isHSTApplied\": false,\r\n            \"HSTPercentage\": \"13.00\",\r\n            \"inventoryId\": null,\r\n            \"inventoryName\": null,\r\n            \"isSyncToInventory\": false,\r\n            \"createdAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"updatedAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Brands",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Local afto}}/brands/?businessAccountId={{Animal Business}}",
+							"host": [
+								"{{Local afto}}"
+							],
+							"path": [
+								"brands",
+								""
+							],
+							"query": [
+								{
+									"key": "businessAccountId",
+									"value": "{{Animal Business}}"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:5000/embedded/order/create' \\\r\n--header 'Accept: application/json, text/plain, */*' \\\r\n--header 'embedded-static-token: mw7f8Ch2MSC300bHKEthp9CGZEIJL8A17d7fuYzT1PcROuHNPEVmEFYUyfmDrIFvpHglqusu4OwvUjAKpZM9ptRbAD7UihMOX2u6bZAdIkjLb7iDRqUIozYCi94HlIvoJO2IyX6AWBhacbHiVQE349ruLWwhfPlNXtoUg8xWweWtuHuaZDZD' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"customerName\": \"Manohar Pulluru\",\r\n    \"customerWhatsappNumber\": \"+916303411409\",\r\n    \"businessAccountId\": \"5d118426-7ff9-40d8-a2f1-476d859da48e\",\r\n    \"items\": [\r\n        {\r\n            \"id\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"sectionTitle\": \"Rice\",\r\n            \"itemId\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"itemName\": \"Classic Beef Burger\",\r\n            \"itemDescription\": \"Classic Beef Burger.\",\r\n            \"regPrice\": \"8\",\r\n            \"salePrice\": \"0\",\r\n            \"imageURL\": \"https://storage.googleapis.com/afto-tech-qa2/meta/elastic_data_images_for_meta/fast_food_fiesta_1737706829286/Classic_Beef_Burger.jpg\",\r\n            \"serial_number\": 1,\r\n            \"productTemplateSectionId\": \"20903f70-bc7a-48f0-89fc-07bbede56cf1\",\r\n            \"isHSTApplied\": false,\r\n            \"HSTPercentage\": \"13.00\",\r\n            \"inventoryId\": null,\r\n            \"inventoryName\": null,\r\n            \"isSyncToInventory\": false,\r\n            \"createdAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"updatedAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Local afto}}/categories/019994cf-63d6-7000-8000-a9b0fd851cea/subcategories",
+							"host": [
+								"{{Local afto}}"
+							],
+							"path": [
+								"categories",
+								"019994cf-63d6-7000-8000-a9b0fd851cea",
+								"subcategories"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:5000/embedded/order/create' \\\r\n--header 'Accept: application/json, text/plain, */*' \\\r\n--header 'embedded-static-token: mw7f8Ch2MSC300bHKEthp9CGZEIJL8A17d7fuYzT1PcROuHNPEVmEFYUyfmDrIFvpHglqusu4OwvUjAKpZM9ptRbAD7UihMOX2u6bZAdIkjLb7iDRqUIozYCi94HlIvoJO2IyX6AWBhacbHiVQE349ruLWwhfPlNXtoUg8xWweWtuHuaZDZD' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"customerName\": \"Manohar Pulluru\",\r\n    \"customerWhatsappNumber\": \"+916303411409\",\r\n    \"businessAccountId\": \"5d118426-7ff9-40d8-a2f1-476d859da48e\",\r\n    \"items\": [\r\n        {\r\n            \"id\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"sectionTitle\": \"Rice\",\r\n            \"itemId\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"itemName\": \"Classic Beef Burger\",\r\n            \"itemDescription\": \"Classic Beef Burger.\",\r\n            \"regPrice\": \"8\",\r\n            \"salePrice\": \"0\",\r\n            \"imageURL\": \"https://storage.googleapis.com/afto-tech-qa2/meta/elastic_data_images_for_meta/fast_food_fiesta_1737706829286/Classic_Beef_Burger.jpg\",\r\n            \"serial_number\": 1,\r\n            \"productTemplateSectionId\": \"20903f70-bc7a-48f0-89fc-07bbede56cf1\",\r\n            \"isHSTApplied\": false,\r\n            \"HSTPercentage\": \"13.00\",\r\n            \"inventoryId\": null,\r\n            \"inventoryName\": null,\r\n            \"isSyncToInventory\": false,\r\n            \"createdAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"updatedAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Staging URL}}/products/?businessAccountId={{Namaste Business}}&subcategory={{SubCategoryID}}&category={{CategoryID}}&brand={{BrandID}}&status=true&limit=20\n",
+							"host": [
+								"{{Staging URL}}"
+							],
+							"path": [
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "businessAccountId",
+									"value": "{{Namaste Business}}"
+								},
+								{
+									"key": "subcategory",
+									"value": "{{SubCategoryID}}"
+								},
+								{
+									"key": "category",
+									"value": "{{CategoryID}}"
+								},
+								{
+									"key": "brand",
+									"value": "{{BrandID}}"
+								},
+								{
+									"key": "status",
+									"value": "true"
+								},
+								{
+									"key": "limit",
+									"value": "20\n"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:5000/embedded/order/create' \\\r\n--header 'Accept: application/json, text/plain, */*' \\\r\n--header 'embedded-static-token: mw7f8Ch2MSC300bHKEthp9CGZEIJL8A17d7fuYzT1PcROuHNPEVmEFYUyfmDrIFvpHglqusu4OwvUjAKpZM9ptRbAD7UihMOX2u6bZAdIkjLb7iDRqUIozYCi94HlIvoJO2IyX6AWBhacbHiVQE349ruLWwhfPlNXtoUg8xWweWtuHuaZDZD' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"customerName\": \"Manohar Pulluru\",\r\n    \"customerWhatsappNumber\": \"+916303411409\",\r\n    \"businessAccountId\": \"5d118426-7ff9-40d8-a2f1-476d859da48e\",\r\n    \"items\": [\r\n        {\r\n            \"id\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"sectionTitle\": \"Rice\",\r\n            \"itemId\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"itemName\": \"Classic Beef Burger\",\r\n            \"itemDescription\": \"Classic Beef Burger.\",\r\n            \"regPrice\": \"8\",\r\n            \"salePrice\": \"0\",\r\n            \"imageURL\": \"https://storage.googleapis.com/afto-tech-qa2/meta/elastic_data_images_for_meta/fast_food_fiesta_1737706829286/Classic_Beef_Burger.jpg\",\r\n            \"serial_number\": 1,\r\n            \"productTemplateSectionId\": \"20903f70-bc7a-48f0-89fc-07bbede56cf1\",\r\n            \"isHSTApplied\": false,\r\n            \"HSTPercentage\": \"13.00\",\r\n            \"inventoryId\": null,\r\n            \"inventoryName\": null,\r\n            \"isSyncToInventory\": false,\r\n            \"createdAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"updatedAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Single Product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, /"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							}
+						],
+						"url": {
+							"raw": "{{Staging URL}}/products/019a2aab-c59b-788f-9918-d5a6a084dfdc",
+							"host": [
+								"{{Staging URL}}"
+							],
+							"path": [
+								"products",
+								"019a2aab-c59b-788f-9918-d5a6a084dfdc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE BRAND IMAGE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"imageUrl\": \"https://new-url.com/new-image.png\",\n    \"thumbnailUrl\": \"https://new-url.com/new-thumbnail.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/brands/019994c3-ec66-7000-8000-d6c94ce92ddc/update-images",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"brands",
+								"019994c3-ec66-7000-8000-d6c94ce92ddc",
+								"update-images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CATEGORY IMAGE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"imageUrl\": \"https://etlstoreqa.blob.core.windows.net/etlstoreqa/puja2.png\",\n    \"thumbnailUrl\": \"https://etlstoreqa.blob.core.windows.net/etlstoreqa/puja2.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/categories/{{CategoryID}}/update-images",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"categories",
+								"{{CategoryID}}",
+								"update-images"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Flow",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"channel\": \"website\",\r\n  \"items\": [\r\n    {\r\n      \"product_retailer_id\": \"019994cf-6f0f-7000-8000-8bccaef69657\",\r\n      \"quantity\": 2,\r\n      \"applied_template\": [] \r\n    }\r\n  ],\r\n  \"channel_metadata\": {} \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/orders/",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"orders",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:5000/embedded/order/create' \\\r\n--header 'Accept: application/json, text/plain, */*' \\\r\n--header 'embedded-static-token: mw7f8Ch2MSC300bHKEthp9CGZEIJL8A17d7fuYzT1PcROuHNPEVmEFYUyfmDrIFvpHglqusu4OwvUjAKpZM9ptRbAD7UihMOX2u6bZAdIkjLb7iDRqUIozYCi94HlIvoJO2IyX6AWBhacbHiVQE349ruLWwhfPlNXtoUg8xWweWtuHuaZDZD' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"customerName\": \"Manohar Pulluru\",\r\n    \"customerWhatsappNumber\": \"+916303411409\",\r\n    \"businessAccountId\": \"5d118426-7ff9-40d8-a2f1-476d859da48e\",\r\n    \"items\": [\r\n        {\r\n            \"id\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"sectionTitle\": \"Rice\",\r\n            \"itemId\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"itemName\": \"Classic Beef Burger\",\r\n            \"itemDescription\": \"Classic Beef Burger.\",\r\n            \"regPrice\": \"8\",\r\n            \"salePrice\": \"0\",\r\n            \"imageURL\": \"https://storage.googleapis.com/afto-tech-qa2/meta/elastic_data_images_for_meta/fast_food_fiesta_1737706829286/Classic_Beef_Burger.jpg\",\r\n            \"serial_number\": 1,\r\n            \"productTemplateSectionId\": \"20903f70-bc7a-48f0-89fc-07bbede56cf1\",\r\n            \"isHSTApplied\": false,\r\n            \"HSTPercentage\": \"13.00\",\r\n            \"inventoryId\": null,\r\n            \"inventoryName\": null,\r\n            \"isSyncToInventory\": false,\r\n            \"createdAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"updatedAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Order Item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"items\": [\r\n    {\r\n      \"product_retailer_id\": \"019a2aab-c5a3-788f-9918-dfc7b67c549c\",\r\n      \"quantity\": 1,\r\n      \"applied_template\": []\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Staging URL}}/orders/{{OrderID}}/items",
+							"host": [
+								"{{Staging URL}}"
+							],
+							"path": [
+								"orders",
+								"{{OrderID}}",
+								"items"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:5000/embedded/order/create' \\\r\n--header 'Accept: application/json, text/plain, */*' \\\r\n--header 'embedded-static-token: mw7f8Ch2MSC300bHKEthp9CGZEIJL8A17d7fuYzT1PcROuHNPEVmEFYUyfmDrIFvpHglqusu4OwvUjAKpZM9ptRbAD7UihMOX2u6bZAdIkjLb7iDRqUIozYCi94HlIvoJO2IyX6AWBhacbHiVQE349ruLWwhfPlNXtoUg8xWweWtuHuaZDZD' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"customerName\": \"Manohar Pulluru\",\r\n    \"customerWhatsappNumber\": \"+916303411409\",\r\n    \"businessAccountId\": \"5d118426-7ff9-40d8-a2f1-476d859da48e\",\r\n    \"items\": [\r\n        {\r\n            \"id\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"sectionTitle\": \"Rice\",\r\n            \"itemId\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"itemName\": \"Classic Beef Burger\",\r\n            \"itemDescription\": \"Classic Beef Burger.\",\r\n            \"regPrice\": \"8\",\r\n            \"salePrice\": \"0\",\r\n            \"imageURL\": \"https://storage.googleapis.com/afto-tech-qa2/meta/elastic_data_images_for_meta/fast_food_fiesta_1737706829286/Classic_Beef_Burger.jpg\",\r\n            \"serial_number\": 1,\r\n            \"productTemplateSectionId\": \"20903f70-bc7a-48f0-89fc-07bbede56cf1\",\r\n            \"isHSTApplied\": false,\r\n            \"HSTPercentage\": \"13.00\",\r\n            \"inventoryId\": null,\r\n            \"inventoryName\": null,\r\n            \"isSyncToInventory\": false,\r\n            \"createdAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"updatedAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, /"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/orders/{{orderId}}",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order Item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/order-items/019adecb-8fd7-7774-bdc8-cef23e4696e7",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"order-items",
+								"019adecb-8fd7-7774-bdc8-cef23e4696e7"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:5000/embedded/order/create' \\\r\n--header 'Accept: application/json, text/plain, */*' \\\r\n--header 'embedded-static-token: mw7f8Ch2MSC300bHKEthp9CGZEIJL8A17d7fuYzT1PcROuHNPEVmEFYUyfmDrIFvpHglqusu4OwvUjAKpZM9ptRbAD7UihMOX2u6bZAdIkjLb7iDRqUIozYCi94HlIvoJO2IyX6AWBhacbHiVQE349ruLWwhfPlNXtoUg8xWweWtuHuaZDZD' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"customerName\": \"Manohar Pulluru\",\r\n    \"customerWhatsappNumber\": \"+916303411409\",\r\n    \"businessAccountId\": \"5d118426-7ff9-40d8-a2f1-476d859da48e\",\r\n    \"items\": [\r\n        {\r\n            \"id\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"sectionTitle\": \"Rice\",\r\n            \"itemId\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"itemName\": \"Classic Beef Burger\",\r\n            \"itemDescription\": \"Classic Beef Burger.\",\r\n            \"regPrice\": \"8\",\r\n            \"salePrice\": \"0\",\r\n            \"imageURL\": \"https://storage.googleapis.com/afto-tech-qa2/meta/elastic_data_images_for_meta/fast_food_fiesta_1737706829286/Classic_Beef_Burger.jpg\",\r\n            \"serial_number\": 1,\r\n            \"productTemplateSectionId\": \"20903f70-bc7a-48f0-89fc-07bbede56cf1\",\r\n            \"isHSTApplied\": false,\r\n            \"HSTPercentage\": \"13.00\",\r\n            \"inventoryId\": null,\r\n            \"inventoryName\": null,\r\n            \"isSyncToInventory\": false,\r\n            \"createdAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"updatedAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "update item",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "x-external-token",
+								"value": "{{x-external-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/orders/{{orderId}}/items/019ada91-c35c-7774-bdc5-420daf2fc12b",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"items",
+								"019ada91-c35c-7774-bdc5-420daf2fc12b"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:5000/embedded/order/create' \\\r\n--header 'Accept: application/json, text/plain, */*' \\\r\n--header 'embedded-static-token: mw7f8Ch2MSC300bHKEthp9CGZEIJL8A17d7fuYzT1PcROuHNPEVmEFYUyfmDrIFvpHglqusu4OwvUjAKpZM9ptRbAD7UihMOX2u6bZAdIkjLb7iDRqUIozYCi94HlIvoJO2IyX6AWBhacbHiVQE349ruLWwhfPlNXtoUg8xWweWtuHuaZDZD' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"customerName\": \"Manohar Pulluru\",\r\n    \"customerWhatsappNumber\": \"+916303411409\",\r\n    \"businessAccountId\": \"5d118426-7ff9-40d8-a2f1-476d859da48e\",\r\n    \"items\": [\r\n        {\r\n            \"id\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"sectionTitle\": \"Rice\",\r\n            \"itemId\": \"c5e2b481-3a86-4529-8194-c47c1283a3bb\",\r\n            \"itemName\": \"Classic Beef Burger\",\r\n            \"itemDescription\": \"Classic Beef Burger.\",\r\n            \"regPrice\": \"8\",\r\n            \"salePrice\": \"0\",\r\n            \"imageURL\": \"https://storage.googleapis.com/afto-tech-qa2/meta/elastic_data_images_for_meta/fast_food_fiesta_1737706829286/Classic_Beef_Burger.jpg\",\r\n            \"serial_number\": 1,\r\n            \"productTemplateSectionId\": \"20903f70-bc7a-48f0-89fc-07bbede56cf1\",\r\n            \"isHSTApplied\": false,\r\n            \"HSTPercentage\": \"13.00\",\r\n            \"inventoryId\": null,\r\n            \"inventoryName\": null,\r\n            \"isSyncToInventory\": false,\r\n            \"createdAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"updatedAt\": \"2025-04-18T14:23:31.222Z\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"delivery_details\": {\n        \"validated_address\": \"123 Main Street, Anytown, ON A1B 2C3\",\n        \"city\": \"Anytown\",\n        \"pincode\": \"A1B 2C3\",\n        \"province_or_territory\": \"ON\",\n        \"delivery_charges\": 4.99,\n        \"delivery_service_name\": \"Local Courier\",\n        \"map_url\": \"\"\n    },\n    \"customer_details\": {\n        \"email\": \"customer@example.com\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/orders/{{orderId}}/confirm",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"confirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/validate-address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "embedded-static-token",
+								"value": "mw7f8Ch2MSC300bHKEthp9CGZEIJL8A17d7fuYzT1PcROuHNPEVmEFYUyfmDrIFvpHglqusu4OwvUjAKpZM9ptRbAD7UihMOX2u6bZAdIkjLb7iDRqUIozYCi94HlIvoJO2IyX6AWBhacbHiVQE349ruLWwhfPlNXtoUg8xWweWtuHuaZDZD"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"2555 Thomas St, Mississauga, ON L5M 5J3, Canada\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/embedded/api/validate-address",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"embedded",
+								"api",
+								"validate-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, /"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"quantity\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Staging URL}}/orders/{{OrderID}}/items/019a588c-3ce7-7eec-b284-6d0bcc563bb4",
+							"host": [
+								"{{Staging URL}}"
+							],
+							"path": [
+								"orders",
+								"{{OrderID}}",
+								"items",
+								"019a588c-3ce7-7eec-b284-6d0bcc563bb4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NEW delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, /"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							}
+						],
+						"url": {
+							"raw": "{{afto-backend-url}}/orders/{{orderId}}/items/019adecb-8fd7-7774-bdc8-cef23e4696e7",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"items",
+								"019adecb-8fd7-7774-bdc8-cef23e4696e7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Details",
+			"item": [
+				{
+					"name": "get user  details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://qa3.getafto.com/backend/v1/customers/me",
+							"protocol": "https",
+							"host": [
+								"qa3",
+								"getafto",
+								"com"
+							],
+							"path": [
+								"backend",
+								"v1",
+								"customers",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Manohar2\",\n    \"email\": \"manu_afto12137@yopmail.com\",\n    \"phone_number\": \"+916303411409\",\n    \"address\": {\n        \"street\": \"433 Simcoe St S Unit #3\",\n        \"city\": \"Oshawa\",\n        \"state\": \"ON\",\n        \"postal_code\": \"L1H 4J5\",\n        \"country\": \"Canada\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/customers/me",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"customers",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delivery API",
+			"item": [
+				{
+					"name": "delivery info & Charge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, /"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"business_account_id\": \"91182be9-9446-4e29-9ade-b0312b238668\",\n    \"destination_address\": \"2022 Stonehouse Crescent, Mississauga, ON L5H 3J1, Canada\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/delivery-charges/019b36c2-bf53-7ccf-a9b9-b325a3bab43a",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"delivery-charges",
+								"019b36c2-bf53-7ccf-a9b9-b325a3bab43a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pickup api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, /"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{afto-backend-url}}/orders/019adecb-85d7-7774-bdc8-b52698772383/pickup",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"orders",
+								"019adecb-85d7-7774-bdc8-b52698772383",
+								"pickup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delivery api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, /"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/orders/019adecb-85d7-7774-bdc8-b52698772383/delivery",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"orders",
+								"019adecb-85d7-7774-bdc8-b52698772383",
+								"delivery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Delivery Charge api",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"destination_address\": \"7744 Tayside Crescent, Mississauga, Canada\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/delivery-charges/{{orderId}}",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"delivery-charges",
+								"{{orderId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search And chatbot",
+			"item": [
+				{
+					"name": "Search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"session_id\": \"search_91182be9-9446-4e29-9ade-b0312b238668\",\n    \"message\": \"AMMA BANANA CHIP CHILI MSLA\",\n    \"business_id\": \"91182be9-9446-4e29-9ade-b0312b238668\",\n    \"workflow_type\": \"search\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chatbot-backend-url}}/chat/message",
+							"host": [
+								"{{chatbot-backend-url}}"
+							],
+							"path": [
+								"chat",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"session_id\": \"search_91182be9-9446-4e29-9ade-b0312b238668e\",\n    \"message\": \"rice\",\n    \"business_id\": \"91182be9-9446-4e29-9ade-b0312b238668\",\n    \"workflow_type\": \"search\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://chatbot-qa.getafto.com/api/chat/message",
+							"protocol": "https",
+							"host": [
+								"chatbot-qa",
+								"getafto",
+								"com"
+							],
+							"path": [
+								"api",
+								"chat",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mpm-template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"session_id\": \"template_91182be9-9446-4e29-9ade-b0312b2386\",\n    \"message\": \"rice\",\n    \"business_id\": \"91182be9-9446-4e29-9ade-b0312b238668\",\n    \"workflow_type\": \"mpm_template\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://chatbot-qa.getafto.com/api/chat/message",
+							"protocol": "https",
+							"host": [
+								"chatbot-qa",
+								"getafto",
+								"com"
+							],
+							"path": [
+								"api",
+								"chat",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chatbot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"session_id\": \"chat_918727808899_business_id\",\n    \"message\": \"Do you have rice\",\n    \"business_id\": \"91182be9-9446-4e29-9ade-b0312b238668\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://chatbot-qa.getafto.com/api/chat/message",
+							"protocol": "https",
+							"host": [
+								"chatbot-qa",
+								"getafto",
+								"com"
+							],
+							"path": [
+								"api",
+								"chat",
+								"message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Templates",
+			"item": [
+				{
+					"name": "Get Templates limit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, /"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							},
+							{
+								"key": "x-platform",
+								"value": "afto-web"
+							},
+							{
+								"key": "status",
+								"value": "active",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{afto-backend-url}}/token-wrapper/channel-whatsapp/templates/{{businessAccountId}}?page=1&limit=10",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"token-wrapper",
+								"channel-whatsapp",
+								"templates",
+								"{{businessAccountId}}"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single template",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, /"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							},
+							{
+								"key": "x-platform",
+								"value": "afto-web"
+							}
+						],
+						"url": {
+							"raw": "{{afto-backend-url}}/token-wrapper/channel-whatsapp/templates/{{businessAccountId}}/019b2720-b026-7004-a286-d6a0c156db24",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"token-wrapper",
+								"channel-whatsapp",
+								"templates",
+								"{{businessAccountId}}",
+								"019b2720-b026-7004-a286-d6a0c156db24"
+							],
+							"query": [
+								{
+									"key": "showAllItems",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Templates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, /"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							},
+							{
+								"key": "x-platform",
+								"value": "afto-web"
+							}
+						],
+						"url": {
+							"raw": "{{afto-backend-url}}/token-wrapper/channel-whatsapp/templates/{{businessAccountId}}/list?limit=2&active=true",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"token-wrapper",
+								"channel-whatsapp",
+								"templates",
+								"{{businessAccountId}}",
+								"list"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Active/ Inactive items",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							},
+							{
+								"key": "x-platform",
+								"value": "afto-web"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"businessAccountId\": \"91182be9-9446-4e29-9ade-b0312b238668\",\n    \"status\": \"stopped\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/template-status-wrapper/channel-whatsapp/templates/0199a563-5f91-7777-a348-9c18f0bbbf16/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"template-status-wrapper",
+								"channel-whatsapp",
+								"templates",
+								"0199a563-5f91-7777-a348-9c18f0bbbf16",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Active/ Inactive items Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							},
+							{
+								"key": "x-platform",
+								"value": "afto-web"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"active\",\n    \"businessAccountId\": \"91182be9-9446-4e29-9ade-b0312b238668\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{afto-backend-url}}/template-status-wrapper/channel-whatsapp/templates/0199a563-5f91-7777-a348-9c18f0bbbf16/status",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"template-status-wrapper",
+								"channel-whatsapp",
+								"templates",
+								"0199a563-5f91-7777-a348-9c18f0bbbf16",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Historical Order",
+			"item": [
+				{
+					"name": "get order history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{afto-backend-url}}/orders?limit=10&page=1",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{afto-backend-url}}/orders/019ada27-06e7-7774-bdc4-7648eed2b9d2",
+							"host": [
+								"{{afto-backend-url}}"
+							],
+							"path": [
+								"orders",
+								"019ada27-06e7-7774-bdc4-7648eed2b9d2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							}
+						],
+						"url": {
+							"raw": "https://qa3.getafto.com/backend/v1/external-fetch-order-address/8220",
+							"protocol": "https",
+							"host": [
+								"qa3",
+								"getafto",
+								"com"
+							],
+							"path": [
+								"backend",
+								"v1",
+								"external-fetch-order-address",
+								"8220"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							}
+						],
+						"url": {
+							"raw": "https://afto-api-prod.getafto.com/v1/store-orders?page=1&limit=15&chatwootId=11&typeOfFetch=cancelled&showReceivedOnly=false",
+							"protocol": "https",
+							"host": [
+								"afto-api-prod",
+								"getafto",
+								"com"
+							],
+							"path": [
+								"v1",
+								"store-orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "15"
+								},
+								{
+									"key": "chatwootId",
+									"value": "11"
+								},
+								{
+									"key": "typeOfFetch",
+									"value": "cancelled"
+								},
+								{
+									"key": "showReceivedOnly",
+									"value": "false"
+								},
+								{
+									"key": "startDate",
+									"value": "2026-03-13",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2026-03-20",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-external-token",
+								"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+							}
+						],
+						"url": {
+							"raw": "https://afto-api-prod.getafto.com/v1/store-orders?page=1&limit=15&chatwootId=11&typeOfFetch=active&showReceivedOnly=false&startDate=2026-02-01&endDate=2026-02-25",
+							"protocol": "https",
+							"host": [
+								"afto-api-prod",
+								"getafto",
+								"com"
+							],
+							"path": [
+								"v1",
+								"store-orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "15"
+								},
+								{
+									"key": "chatwootId",
+									"value": "11"
+								},
+								{
+									"key": "typeOfFetch",
+									"value": "active"
+								},
+								{
+									"key": "showReceivedOnly",
+									"value": "false"
+								},
+								{
+									"key": "startDate",
+									"value": "2026-02-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2026-02-25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic PsxDalmGAG.v7XLnqRLliiYHqjcRbVZ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://api.shipday.com/orders/44272471",
+							"protocol": "https",
+							"host": [
+								"api",
+								"shipday",
+								"com"
+							],
+							"path": [
+								"orders",
+								"44272471"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upload Image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/rudre/Downloads/puja2.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/upload-image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"upload-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Suggestion",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-external-token",
+						"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+					}
+				],
+				"url": {
+					"raw": "{{afto-backend-url}}/products/suggestions?q=tomato&businessAccountId={{businessAccountId}}",
+					"host": [
+						"{{afto-backend-url}}"
+					],
+					"path": [
+						"products",
+						"suggestions"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "tomato"
+						},
+						{
+							"key": "businessAccountId",
+							"value": "{{businessAccountId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Business Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-external-token",
+						"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+					}
+				],
+				"url": {
+					"raw": "https://afto-api-prod.yellowdune-dc61eefc.eastus.azurecontainerapps.io/v1/business-accounts/80b6fc97-aa38-46b1-bee8-a106d9b7cd96",
+					"protocol": "https",
+					"host": [
+						"afto-api-prod",
+						"yellowdune-dc61eefc",
+						"eastus",
+						"azurecontainerapps",
+						"io"
+					],
+					"path": [
+						"v1",
+						"business-accounts",
+						"80b6fc97-aa38-46b1-bee8-a106d9b7cd96"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer Staging",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://afto-ecommerce-staging-edexeah0adbqach4.eastus2-01.azurewebsites.net"
+					},
+					{
+						"key": "Referer",
+						"value": "https://afto-ecommerce-staging-edexeah0adbqach4.eastus2-01.azurewebsites.net/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "x-external-token",
+						"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+					},
+					{
+						"key": "Cookie",
+						"value": "__stripe_mid=b87144a3-44ff-42d9-855b-9b73222683bcf77ca3; __stripe_sid=396fbb0f-7c54-433a-9b40-84d1a3cc4d9cecf3b6"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"rudresh raj\",\r\n    \"email\": \"rjrudi7@gmail.com\",\r\n    \"phone_number\": \"+918368336206\",\r\n    \"address\": {\r\n        \"street\": \"5744 Tayside Crescent\",\r\n        \"city\": \"Mississauga\",\r\n        \"state\": \"ON\",\r\n        \"postal_code\": \"L5B 1B8\",\r\n        \"country\": \"Canada\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Staging URL}}/customers/me",
+					"host": [
+						"{{Staging URL}}"
+					],
+					"path": [
+						"customers",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Customer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTlhNTNhMS1kYWY0LTc0OWEtYjUyMS1hYzUzZWZkZmM1ZjgiLCJidXNpbmVzc0FjY291bnRJZCI6IjgwYjZmYzk3LWFhMzgtNDZiMS1iZWU4LWExMDZkOWI3Y2Q5NiIsInBob25lTnVtYmVyIjoiKzkxODM2ODMzNjIwNiIsImNoYXR3b290Q29udGFjdElkIjo0NjU3LCJyb2xlIjoiY3VzdG9tZXIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzYyOTMzMjQwLCJleHAiOjE3NjM1MzgwNDB9.D-u4M2SyGUaIenmdKb-eddg3EOaNopYjBDD_P4k3NHk"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:3000"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:3000/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "x-external-token",
+						"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+					},
+					{
+						"key": "Cookie",
+						"value": "next-auth.csrf-token=e75f923e15138f546f06aad19b47192c5da4227265cdd637c7e76a0767ac8222%7Ca18963c8c274ffb5a65cda9d84923b139f5d72bb811d52f221c731f790748517; __stripe_mid=b40a2caa-a6ce-4818-9c78-4248752c387e3c3570; _ga=GA1.1.2095985694.1760186782; _ga_0THZ1G9K6W=GS2.1.s1760186781$o1$g1$t1760187752$j60$l0$h0; connect.sid=s%3ATADiEabultw5DpCTQnb6385lvfYlqpSd.AimHWCrUxzbL%2FBqLGVng60azdmQ8C4QS%2F1JGWBQzEp4; rl_page_init_referrer=RudderEncrypt%3AU2FsdGVkX1%2B8vqf8RKcwKIdAV7oEtkmghVmXSlnTLLA%3D; rl_page_init_referring_domain=RudderEncrypt%3AU2FsdGVkX1%2Bbik7nN0tD8iD%2Fdzono%2FDSbioepVPyIOI%3D; rl_anonymous_id=RudderEncrypt%3AU2FsdGVkX1%2Bj2WH8VIfqOfUbolGrhlX78gtDRoK1IlSyVatjxyu1caxeen2fwyPLQVRmHn29w7hOpToOb%2FiXow%3D%3D; rl_user_id=RudderEncrypt%3AU2FsdGVkX1%2BxDIu0MbQRUeO9nbuYl7kLxxphHHPBv6eRhfHwYuWFPRLHUkT5bXAIGc7Bnf7BNhSaPmr%2Brx26ZCtiT0PvsoSLS71me2Ne42Pso%2FTaPsyYumUsQjiLdROopzvkmrIJ7T2U5zXtzjKpqH40yL5p0m6PSQ8x3E6jLsY%3D; rl_trait=RudderEncrypt%3AU2FsdGVkX19JhgAaMvjo9EqOO4wmw1vN14USF5HgwUNJhnwFBLUljSkN7Gu8J8WtSqeGhqmVd0Ve9HsrI5f6ZKtKQtWL3UApU6GpoY2QDdwMtHKKjkSjFuCqAXFxZZmzbHZiF8RocniG0URY%2FR2%2B3AvuM7TDPYEU7SPs0OzC5NA%3D; rl_session=RudderEncrypt%3AU2FsdGVkX1%2B5pYYJy4PCfou4q3jHSG5MH0CNLcOIdA3s9UzxfXKdEAJfleUmDLtZQSAV8oeu5zOIRLXJIiq9Fddzpf3c1bl3nrccIVpdHlVhUHDQ9nZebcBkZkXtOXM5zlORzsCPAGeu%2Fzgx4tE8cQ%3D%3D; ph_phc_4URIAm1uYfJO7j8kWSe0J8lc8IqnstRLS7Jx8NcakHo_posthog=%7B%22distinct_id%22%3A%227420c8f5930aed674b8e63308276fddfe901df78b553fb12d0bb2cf682462bad%238c4d0375-45a2-4cc2-8576-182a61f56b3d%22%2C%22%24sesid%22%3A%5B1761678433735%2C%22019a2c37-9dd8-7cc1-b6e4-4edef29803a3%22%2C1761678433735%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22http%3A%2F%2Flocalhost%3A5678%2Fsettings%2Fusage%22%7D%7D; next-auth.callback-url=http%3A%2F%2Flocalhost%3A4200; session=eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiYjhlOGVhYmJjMGYxNjQxYmVkYzBhYmJjODJmOGUzYzQ2ZTllODc2OCIsImxvY2FsZSI6ImVuIn0.aQjtUA.86akZHmX3D3WwuT-MeeC5xLcFjU; next-auth.session-token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..GTWfRBM7JYPTpcXn.Xc4FJaXLgrW6_djdfraXQVoz9OV2CF4mh_hc5WP9Uj6_fL8gCT8hVJqYufR-TeFk2w7hD_VjkdJVEzRNnX3yifHcHfO7lvR8t87zn_n2pmMT9NaKvQbE6E_eFwHImqFk4aZIOiRnoDq3FAeRCnm27Pnzj7ZJrIRQuXw0IF7X-QPrx10ZVW9_ydnyVOAeGS-axoYrShqj4VvxjLQzlc-dg_dXyQ6uS6C0TYQZYyHUQfF0Bvjg0s1pPRgbRaq27sVDydpIDNDK8HKztk9mL8EQlm8pkxwJ11JOomyJ7l5ejT_94cNz-DltRdlMw8XlzHleFgBjBm5Sjly-3pJ2CmSmzCa66PIMX6m5nxR46lt5rByk2xXBIxzrmfHqfLcxb7oIHD8fESp5dwD5jUar-JKs3688HzXZ4tMGlnpwK8z5B-1IGwZ3GOvaY1uY5fZp8b1ao3vs-6QnO_sATbesDjNdjsq2ybHf7wUnpoLCp-Q6jiy_WR9CnWxv1NbwMPPOX3D-eri-JvMswGP2rM3Qk_WmNQQQ18CqLf7ypifza2o9F8x96cptJzUvifxqUKPgvMq0Pdrik5lMjWWE3_NccAcXiY_2hpsy679Fg3g9kvPnZBaMtnSr2jTw4F-GWn8u3LbfoZyRHlLA7JAO8A.npUjpIssu47U9tpSg5MuXA; __next_hmr_refresh_hash__=7a26db0294dab2a5a10b0aec3b7fa1da633457081244afec; __stripe_sid=afc077ef-60a9-4f21-84fa-e5b20cd2c2c4adb8d1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"rudresh raj\",\r\n    \"email\": \"dvvvadv@yopmail.com\",\r\n    \"phone_number\": \"+918368336206\",\r\n    \"address\": {\r\n        \"street\": \"310 Bristol Rd E\",\r\n        \"city\": \"Mississauga\",\r\n        \"state\": \"ON\",\r\n        \"postal_code\": \"L4Z 3V5\",\r\n        \"country\": \"Canada\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{prod afto}}/customers/me",
+					"host": [
+						"{{prod afto}}"
+					],
+					"path": [
+						"customers",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-external-token",
+						"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/v1/external-fetch-order-address/019cc3f3-4b98-7333-ad44-72f2abb7c5a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"external-fetch-order-address",
+						"019cc3f3-4b98-7333-ad44-72f2abb7c5a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-external-token",
+						"value": "bd5c75ad-cfe0-49bb-b8dc-18cf743b93ea",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"kes_afto@yopmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qa3.getafto.com/backend/v1/chatwoot/login",
+					"protocol": "https",
+					"host": [
+						"qa3",
+						"getafto",
+						"com"
+					],
+					"path": [
+						"backend",
+						"v1",
+						"chatwoot",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en-GB;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa3.getafto.com/?tab=orders"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Linux\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOWJjMTMwLTc2ZmMtNzk5OC04NTcwLWQzNjE4MThmMzY3ZiIsImZpcnN0TmFtZSI6IkFuaW1hbCIsImVtYWlsIjoia2VzX2FmdG9AeW9wbWFpbC5jb20iLCJpYXQiOjE3NzQzNTU3ODZ9.5_a-IPbwuM2eRt1-2rpT1mikWMWa7WR6fQjpK7GwaNM"
+					},
+					{
+						"key": "x-platform",
+						"value": "afto-web"
+					},
+					{
+						"key": "Cookie",
+						"value": "__Host-next-auth.csrf-token=f4f58f6dfad84ae36945561bcdcff6c7d2c260ebe24870e4ff320c3f886da24a%7C0944b3f212330a972267e4a39d5099ad8743d8d593270c76e947aeb19034ba85; __Secure-next-auth.callback-url=https%3A%2F%2Fqa3.getafto.com; __Secure-next-auth.session-token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..F5ctX0qPy-NtQXfc.yZ9caTdM7eUtQdXxVHDNXXTBEOvbdEdz4QGhjtfkycGHMMYzdd5R_6iVcJoBKB4l1m33C7a7VgQf4O7MQHDAFRWdY9E3EhRBNR5DPaxrfdkYZ0xUNzXBfLn8iHb-uMamVGKZYpqoFDABUsIs0nc6J095nk8knjf75R7KCCWTww-S7i-sc5Ud59kbYt4CICxCHpNXb-mKghkSDRf8pAMUwjeMIPrhQ0-bGRCUaztvpymyAYGuRI3gAk4f8hiH4QgAfd6c-yYqBfZeXkEOxjY0NveC0NrroKbEZxa89bLRbFO-x1Z7PFtP2EoovodVg231ZOBl8OoE0nrVpxcP1N17bvbtZ4L11Ttg-sEVzeqaD1I8cQyJlciPOj6JQKrxl-LqIEoaJ6PFjWkEaoUt4axooHV3uduM15QPxwcGckIE1RjRS18k_3PDMGQikn4DOgk8HA3kSFUUkQ9mbDK_KpZ38f1BSjvO7nVXkPSzGAgCoWAAxNoq6IZv4UR_lS8rbdlkKkaq6owtRzKI32uSmoYPJLNFNeNJ5hzp425kLEo0eAhvoNRJymMnSiD8h3bHPNWkZEMP0hNcN7oA7pECJ9unRGgA6oV5bB9e9yaCF_uexhnRi0Wei2Zl5kLobikZuqziSZ3q0KXu9yAQrV1txZEClvaLgiC0Ge5OEgl1vlBaGnDFIvKVP1axUf-X4Gd34fgwmhmJhCYUjPL67FG9HP4-IGsOZUim-gH72IX96WNJ0_Y4nCLJcbFpyTRrLj5XNg38ohSF5C6lg9ixb43jLXNnKt6u_NJ_r8_IkJ480kV5Bm3dtnriCtE6PzyDGRC2cWBsO18hQ6fHg0pXDqSpXeYasO3--NqbmMBn8-4czJ-YhFxbYwc5kBzMXBeXvXP_wWAz4eexhhm0iI3wuvQgMVFbLqcMUCK8B2kXVJsh1ZTAX6duDzBoZyIKEEUwkNrrCEbdm2GA35now9HlJK4hLrbKvQwkueFUrYC1tyCiar195ez35VQRXR8FhJElfnVXad4leQFYmDYG_yn_So9D30RrhAH4MUKLYzvA.JXQqO-WpfuTtrTwNWlG6_g; AUTH=%7B%22user%22%3A%7B%22name%22%3A%22Animal%20kingdom%22%2C%22email%22%3A%22kes_afto%40yopmail.com%22%2C%22id%22%3A%22019bc130-76fc-7998-8570-d361818f367f%22%2C%22profilePic%22%3A%22%2Fimages%2FAvatar2.svg%22%2C%22firstName%22%3A%22Animal%22%2C%22lastName%22%3A%22kingdom%22%2C%22businessAccountId%22%3A%2291182be9-9446-4e29-9ade-b0312b238668%22%2C%22hasPaidAccessByAdmin%22%3Atrue%2C%22isNewUser%22%3Afalse%2C%22subscription%22%3A%7B%22lastCheckedOnDate%22%3A%222026-03-24%22%2C%22hasActiveSubscription%22%3Afalse%2C%22paymentServiceUserId%22%3A%22cus_SK35kqEb4WAfAd%22%7D%2C%22isLegal%22%3Afalse%2C%22isDental%22%3Afalse%2C%22role%22%3A%22admin%22%7D%2C%22expires%22%3A%222026-04-23T12%3A37%3A12.705Z%22%2C%22accessToken%22%3A%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOWJjMTMwLTc2ZmMtNzk5OC04NTcwLWQzNjE4MThmMzY3ZiIsImZpcnN0TmFtZSI6IkFuaW1hbCIsImVtYWlsIjoia2VzX2FmdG9AeW9wbWFpbC5jb20iLCJpYXQiOjE3NzMxNjQ4ODh9.7hzUBBpaBNxyj6rmwB5QoypeYbLOrRrcMNCUkdcL5UY%22%7D"
+					}
+				],
+				"url": {
+					"raw": "https://qa3.getafto.com/backend/v1/order-transactions/019bc130-76fc-7998-8570-d361818f367f?page=1&limit=10&typeOfFetch=active",
+					"protocol": "https",
+					"host": [
+						"qa3",
+						"getafto",
+						"com"
+					],
+					"path": [
+						"backend",
+						"v1",
+						"order-transactions",
+						"019bc130-76fc-7998-8570-d361818f367f"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "typeOfFetch",
+							"value": "active"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "afto-backend-url",
+			"value": ""
+		},
+		{
+			"key": "orderId",
+			"value": ""
+		},
+		{
+			"key": "customerId",
+			"value": ""
+		},
+		{
+			"key": "businessAccountId",
+			"value": ""
+		},
+		{
+			"key": "customerPhone",
+			"value": ""
+		},
+		{
+			"key": "refreshToken",
+			"value": ""
+		},
+		{
+			"key": "accessToken",
+			"value": ""
+		},
+		{
+			"key": "x-external-token",
+			"value": ""
+		},
+		{
+			"key": "chatbot-backend-url",
+			"value": ""
+		}
+	]
+}

@@ -1,0 +1,109 @@
+{
+  "store": {
+    "name": "SBM Retail",
+    "slug": "sbm",
+    "primaryColor": "#DC2626",
+    "secondaryColor": "#FFFFFF",
+    "logo": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=200&h=200&fit=crop",
+    "searchPlaceholder": "Search SBM Retail…",
+    "tagline": "Quality products at great prices"
+  },
+  "users": [
+    {
+      "email": "manohar@getafto.com",
+      "password": "manohar@getafto.com",
+      "name": "Manohar"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-electronics",
+      "name": "Electronics",
+      "image": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "cat-fashion",
+      "name": "Fashion",
+      "image": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "cat-home",
+      "name": "Home & Living",
+      "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-headphones",
+      "name": "Wireless Headphones",
+      "price": 79.99,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
+      "description": "Premium noise-cancelling headphones."
+    },
+    {
+      "id": "prod-watch",
+      "name": "Smart Watch",
+      "price": 199.99,
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop",
+      "description": "Track fitness and stay connected."
+    },
+    {
+      "id": "prod-jacket",
+      "name": "Designer Jacket",
+      "price": 149.99,
+      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=400&fit=crop",
+      "description": "Stylish jacket for all seasons."
+    },
+    {
+      "id": "prod-lamp",
+      "name": "LED Desk Lamp",
+      "price": 39.99,
+      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&h=400&fit=crop",
+      "description": "Adjustable brightness desk lamp."
+    }
+  ],
+  "pages": [
+    {
+      "slug": "home",
+      "title": "SBM Retail Home",
+      "layout": [
+        {
+          "blockType": "heroBanner",
+          "title": "Welcome to SBM Retail",
+          "subtitle": "Discover amazing deals and quality products",
+          "backgroundImage": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&h=800&fit=crop",
+          "buttonText": "Shop Now",
+          "buttonLink": "/products"
+        },
+        {
+          "blockType": "categoriesBlock",
+          "title": "Shop by Category",
+          "categoryIds": ["cat-electronics", "cat-fashion", "cat-home"]
+        },
+        {
+          "blockType": "productGrid",
+          "title": "Featured Products",
+          "productIds": ["prod-headphones", "prod-watch", "prod-jacket", "prod-lamp"]
+        },
+        {
+          "blockType": "offersCarousel",
+          "title": "Special Offers",
+          "slides": [
+            {
+              "headline": "Up to 50% Off",
+              "description": "Limited time deals on selected items",
+              "image": "https://images.unsplash.com/photo-1607082348824-0a960f2a4b9d?w=800&h=500&fit=crop",
+              "link": "/products"
+            },
+            {
+              "headline": "Free Shipping",
+              "description": "On orders over $50",
+              "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=500&fit=crop",
+              "link": "/products"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

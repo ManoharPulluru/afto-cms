@@ -1,0 +1,1952 @@
+{
+  "store": {
+    "name": "Namaste Supermarket",
+    "slug": "namastesupermarket",
+    "primaryColor": "#6d9254",
+    "secondaryColor": "#FFFFFF",
+    "logo": "https://placehold.co/200x200/0D9488/white/png?text=NS"
+  },
+  "users": [
+    {
+      "email": "manohar@getafto.com",
+      "password": "manohar@getafto.com",
+      "name": "Manohar"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-spices",
+      "name": "Spices & Masala",
+      "image": "https://placehold.co/600x400/92400e/white/png?text=Spices"
+    },
+    {
+      "id": "cat-produce",
+      "name": "Fresh Produce",
+      "image": "https://placehold.co/600x400/15803d/white/png?text=Produce"
+    },
+    {
+      "id": "cat-dairy",
+      "name": "Dairy & Frozen",
+      "image": "https://placehold.co/600x400/0369a1/white/png?text=Dairy"
+    },
+    {
+      "id": "cat-snacks",
+      "name": "Snacks & Sweets",
+      "image": "https://placehold.co/600x400/be123c/white/png?text=Snacks"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-basmati",
+      "name": "Premium Basmati Rice 5kg",
+      "price": 18.99,
+      "image": "https://placehold.co/400x400/d97706/white/png?text=Rice",
+      "description": "Aged long-grain basmati rice, perfect for biryani."
+    },
+    {
+      "id": "prod-ghee",
+      "name": "Pure Cow Ghee 1L",
+      "price": 14.49,
+      "image": "https://placehold.co/400x400/fbbf24/white/png?text=Ghee",
+      "description": "Traditional clarified butter, rich aroma."
+    },
+    {
+      "id": "prod-mango",
+      "name": "Alphonso Mangoes (6 pack)",
+      "price": 12.99,
+      "image": "https://placehold.co/400x400/f59e0b/white/png?text=Mango",
+      "description": "Seasonal ripe mangoes, sweet and juicy."
+    },
+    {
+      "id": "prod-paneer",
+      "name": "Fresh Paneer 400g",
+      "price": 5.99,
+      "image": "https://placehold.co/400x400/fef3c7/92400e/png?text=Paneer",
+      "description": "Soft cottage cheese, made fresh daily."
+    }
+  ],
+  "pages": [
+    {
+      "slug": "/",
+      "title": "Namaste Supermarket Home",
+      "layout": [
+        {
+          "blockType": "heroBanner",
+          "title": "Welcome to Namaste Supermarket",
+          "subtitle": "Authentic Indian groceries, spices, and fresh produce delivered to your door",
+          "backgroundImage": "https://placehold.co/1600x800/0D9488/white/png?text=Namaste+Supermarket",
+          "buttonText": "Shop Now",
+          "buttonLink": "/products"
+        },
+        {
+          "blockType": "categoriesBlock",
+          "title": "Shop by Category",
+          "categoryIds": [
+            "cat-spices",
+            "cat-produce",
+            "cat-dairy",
+            "cat-snacks"
+          ]
+        },
+        {
+          "blockType": "offersCarousel",
+          "title": "Weekly Specials",
+          "slides": [
+            {
+              "headline": "20% Off Spices",
+              "description": "Stock up on masalas this week only",
+              "image": "https://placehold.co/800x500/92400e/white/png?text=20%25+Off+Spices",
+              "link": "/products"
+            },
+            {
+              "headline": "Free Delivery Over $40",
+              "description": "On all orders within 10 miles",
+              "image": "https://placehold.co/800x500/0D9488/white/png?text=Free+Delivery",
+              "link": "/products"
+            }
+          ]
+        },
+        {
+          "blockType": "productGrid",
+          "title": "Featured Products",
+          "productIds": [
+            "prod-basmati",
+            "prod-ghee",
+            "prod-mango",
+            "prod-paneer"
+          ]
+        },
+        {
+          "blockType": "testimonials",
+          "title": "What Our Customers Say",
+          "items": [
+            {
+              "quote": "Best Indian grocery store in town. Fresh paneer every time!",
+              "author": "Priya Sharma",
+              "role": "Regular Customer"
+            },
+            {
+              "quote": "Amazing spice selection and friendly staff. Highly recommend.",
+              "author": "Raj Patel",
+              "role": "Local Chef"
+            },
+            {
+              "quote": "Fast delivery and great prices on basmati rice.",
+              "author": "Anita Desai",
+              "role": "Home Cook"
+            }
+          ]
+        }
+      ],
+      "id": "home",
+      "tree": [
+        {
+          "id": "header-1",
+          "type": "header",
+          "variant": "HeaderV1",
+          "label": "Header",
+          "children": [
+            {
+              "id": "logo-2",
+              "type": "logo",
+              "variant": "LogoV1",
+              "label": "Logo",
+              "props": {
+                "imageUrl": "https://namastemississauga.ca/logo.png"
+              }
+            },
+            {
+              "id": "search-3",
+              "type": "search",
+              "variant": "SearchV1",
+              "label": "Search",
+              "props": {
+                "placeholder": "Search products...",
+                "icon": "ri:search-line"
+              }
+            },
+            {
+              "id": "navLink-home-17",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Home",
+              "props": {
+                "navKey": "home",
+                "label": "Home",
+                "href": "/",
+                "icon": "ic:outline-home",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "navLink-orders-18",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Orders",
+              "props": {
+                "navKey": "orders",
+                "label": "Orders",
+                "href": "/orders",
+                "icon": "material-symbols:order-play-outline",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "navLink-rewards-19",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Rewards",
+              "props": {
+                "navKey": "rewards",
+                "label": "Rewards",
+                "href": "#rewards",
+                "icon": "solar:medal-ribbons-star-bold",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "navLink-coupons-7",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Coupons",
+              "props": {
+                "navKey": "coupons",
+                "label": "Coupons",
+                "href": "#coupons",
+                "icon": "solar:ticket-linear",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "account-3",
+              "type": "account",
+              "variant": "AccountGroceryV1",
+              "label": "Profile Card",
+              "props": {
+                "isLoggedIn": true,
+                "userName": "Manohar",
+                "userEmail": "manohar@getafto.com",
+                "welcomeLabel": "Welcome",
+                "loginPrompt": "Login or Sign Up"
+              }
+            },
+            {
+              "id": "themeToggle-21",
+              "type": "themeToggle",
+              "variant": "ThemeToggleV1",
+              "label": "Theme Toggle",
+              "props": {
+                "backgroundColor": "#6d9254",
+                "knobColor": "#ffffff",
+                "icon": "solar:sun-bold",
+                "iconColor": "#6d9254",
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "cart-4",
+              "type": "cart",
+              "variant": "CartV1",
+              "label": "Cart"
+            },
+            {
+              "id": "groceryBarStyle-22",
+              "type": "groceryBarStyle",
+              "variant": "GroceryBarStyleV1",
+              "label": "Bar Style",
+              "props": {
+                "backgroundColor": "#f7faf5",
+                "borderColor": "#e5ebe0",
+                "mobileSearchBg": "#f0f4ec"
+              }
+            }
+          ],
+          "props": {
+            "appearanceByVariant": {
+              "HeaderV1": {},
+              "HeaderV2": {
+                "colorScheme": "light",
+                "applySchemeToContent": true,
+                "backgroundColor": "#ffffff",
+                "backgroundOpacity": 100,
+                "borderColor": "",
+                "accentColor": "#6d9254",
+                "blur": true,
+                "boxShadow": "0 4px 20px rgba(0, 0, 0, 0.1)",
+                "minHeightDesktop": 88,
+                "minHeightMobile": 58,
+                "rightNavPadding": 280
+              },
+              "HeaderV3": {
+                "colorScheme": "dark",
+                "applySchemeToContent": true,
+                "backgroundColor": "#000000",
+                "backgroundOpacity": 100,
+                "borderColor": "rgba(239,178,27,0.08)",
+                "accentColor": "#6d9254",
+                "blur": true,
+                "boxShadow": "0 4px 20px rgba(0, 0, 0, 0.1)",
+                "mobileBackgroundColor": "#0c0c0c",
+                "mobileBorderColor": "rgba(239,178,27,0.25)",
+                "minHeightDesktop": 88,
+                "minHeightMobile": 58,
+                "rightNavPadding": 280,
+                "dividerColor": "rgba(239,178,27,0.25)"
+              }
+            },
+            "childrenByVariant": {
+              "HeaderV1": [
+                {
+                  "id": "logo-2",
+                  "type": "logo",
+                  "variant": "LogoV1",
+                  "label": "Logo",
+                  "props": {
+                    "imageUrl": "https://namastemississauga.ca/logo.png"
+                  }
+                },
+                {
+                  "id": "search-3",
+                  "type": "search",
+                  "variant": "SearchV1",
+                  "label": "Search",
+                  "props": {
+                    "placeholder": "Search products...",
+                    "icon": "ri:search-line"
+                  }
+                },
+                {
+                  "id": "navLink-home-17",
+                  "type": "navLink",
+                  "variant": "NavLinkV1",
+                  "label": "Nav · Home",
+                  "props": {
+                    "navKey": "home",
+                    "label": "Home",
+                    "href": "/",
+                    "icon": "material-symbols:home-outline",
+                    "textColor": "#4b5563",
+                    "hoverColor": "#6d9254",
+                    "iconColor": "#4b5563",
+                    "fontSize": 13,
+                    "visible": true,
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "navLink-orders-18",
+                  "type": "navLink",
+                  "variant": "NavLinkV1",
+                  "label": "Nav · Orders",
+                  "props": {
+                    "navKey": "orders",
+                    "label": "Orders",
+                    "href": "/orders",
+                    "icon": "material-symbols:order-play-outline",
+                    "textColor": "#4b5563",
+                    "hoverColor": "#6d9254",
+                    "iconColor": "#4b5563",
+                    "fontSize": 13,
+                    "visible": true,
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "navLink-rewards-19",
+                  "type": "navLink",
+                  "variant": "NavLinkV1",
+                  "label": "Nav · Rewards",
+                  "props": {
+                    "navKey": "rewards",
+                    "label": "Rewards",
+                    "href": "#rewards",
+                    "icon": "solar:medal-ribbons-star-bold",
+                    "textColor": "#4b5563",
+                    "hoverColor": "#6d9254",
+                    "iconColor": "#4b5563",
+                    "fontSize": 13,
+                    "visible": true,
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "navLink-coupons-5",
+                  "type": "navLink",
+                  "variant": "NavLinkV1",
+                  "label": "Nav · Coupons",
+                  "props": {
+                    "navKey": "coupons",
+                    "label": "Coupons",
+                    "href": "#coupons",
+                    "icon": "solar:ticket-linear",
+                    "textColor": "#4b5563",
+                    "hoverColor": "#6d9254",
+                    "iconColor": "#4b5563",
+                    "fontSize": 13,
+                    "visible": true,
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "account-3",
+                  "type": "account",
+                  "variant": "AccountGroceryV1",
+                  "label": "Profile Card",
+                  "props": {
+                    "isLoggedIn": true,
+                    "userName": "Manohar",
+                    "userEmail": "manohar@getafto.com",
+                    "welcomeLabel": "Welcome",
+                    "loginPrompt": "Login or Sign Up"
+                  }
+                },
+                {
+                  "id": "themeToggle-21",
+                  "type": "themeToggle",
+                  "variant": "ThemeToggleV1",
+                  "label": "Theme Toggle",
+                  "props": {
+                    "backgroundColor": "#6d9254",
+                    "knobColor": "#ffffff",
+                    "icon": "solar:sun-bold",
+                    "iconColor": "#6d9254",
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "cart-4",
+                  "type": "cart",
+                  "variant": "CartV1",
+                  "label": "Cart"
+                },
+                {
+                  "id": "groceryBarStyle-22",
+                  "type": "groceryBarStyle",
+                  "variant": "GroceryBarStyleV1",
+                  "label": "Bar Style",
+                  "props": {
+                    "backgroundColor": "#f7faf5",
+                    "borderColor": "#e5ebe0",
+                    "mobileSearchBg": "#f0f4ec"
+                  }
+                }
+              ],
+              "HeaderV2": [
+                {
+                  "id": "logo-15",
+                  "type": "logo",
+                  "variant": "LogoV1",
+                  "label": "Logo",
+                  "props": {
+                    "imageUrl": "https://namastemississauga.ca/logo.png"
+                  }
+                },
+                {
+                  "id": "storeName-16",
+                  "type": "storeName",
+                  "variant": "StoreNameV1",
+                  "label": "Store Name",
+                  "props": {
+                    "text": "Namaste Supermarket",
+                    "textColor": "#0F1419",
+                    "fontSize": 20,
+                    "mobileFontSize": 11
+                  }
+                },
+                {
+                  "id": "address-17",
+                  "type": "address",
+                  "variant": "AddressV1",
+                  "label": "Address",
+                  "props": {
+                    "text": "3037 Clayhill Road, Mississauga ON Canada",
+                    "textColor": "#1A1F2E",
+                    "mobileTextColor": "#1A1F2E",
+                    "fontSize": 12,
+                    "showIcon": true,
+                    "icon": "material-symbols:location-on-outline-rounded",
+                    "iconColor": "#1A1F2E"
+                  }
+                },
+                {
+                  "id": "search-18",
+                  "type": "search",
+                  "variant": "SearchV1",
+                  "label": "Search Bar",
+                  "props": {
+                    "placeholder": "Search Namaste Supermarket…",
+                    "backgroundColor": "#f4f6f0",
+                    "borderColor": "#e2eacc",
+                    "borderWidth": 1,
+                    "textColor": "#0f1419",
+                    "placeholderColor": "#9ca3af",
+                    "icon": "solar:magnifer-linear",
+                    "iconColor": "#1a1f2e",
+                    "mobileSearchIcon": "solar:magnifer-linear",
+                    "mobileSearchIconColor": "#0F1419",
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "deals-19",
+                  "type": "deals",
+                  "variant": "DealsV1",
+                  "label": "Deals Button",
+                  "props": {
+                    "label": "Deals",
+                    "visible": true,
+                    "icon": "solar:star-fall-minimalistic-linear",
+                    "gradientStart": "#6d9254dd",
+                    "gradientEnd": "#6d9254",
+                    "textColor": "#ffffff",
+                    "borderColor": "#6d9254",
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "account-20",
+                  "type": "account",
+                  "variant": "AccountV1",
+                  "label": "Account / Login",
+                  "props": {
+                    "isLoggedIn": false,
+                    "userName": "Manohar",
+                    "userEmail": "manohar@getafto.com",
+                    "welcomeLabel": "Welcome",
+                    "loginPrompt": "Login or Sign Up",
+                    "backgroundColor": "rgba(248, 250, 249, 0.5)",
+                    "borderColor": "rgba(232, 245, 232, 0.25)",
+                    "avatarBg": "#6d9254",
+                    "avatarTextColor": "#ffffff",
+                    "loggedOutIcon": "solar:user-circle-linear",
+                    "nameColor": "#0F1419",
+                    "subtitleColor": "#1A1F2E",
+                    "chevronColor": "#1A1F2E",
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "cart-21",
+                  "type": "cart",
+                  "variant": "CartV1",
+                  "label": "Cart Button",
+                  "props": {
+                    "cartTotal": "$0.00",
+                    "cartCount": 0,
+                    "label": "Cart",
+                    "icon": "solar:cart-large-2-linear",
+                    "backgroundColor": "#6d9254",
+                    "textColor": "#ffffff",
+                    "borderColor": "#6d925430",
+                    "mobileIconColor": "#0F1419",
+                    "showCount": true,
+                    "showTotal": false,
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "headerStyle-22",
+                  "type": "headerStyle",
+                  "variant": "HeaderStyleV1",
+                  "label": "Background & Style",
+                  "props": {
+                    "backgroundColor": "#FFFFFF",
+                    "backgroundOpacity": 97,
+                    "borderColor": "",
+                    "blur": true,
+                    "accentColor": "#6d9254",
+                    "boxShadow": "0 4px 20px rgba(0, 0, 0, 0.1)"
+                  }
+                }
+              ],
+              "HeaderV3": [
+                {
+                  "id": "logo-27",
+                  "type": "logo",
+                  "variant": "BistroLogoV1",
+                  "label": "Logo",
+                  "props": {
+                    "imageUrl": "https://namastemississauga.ca/logo.png"
+                  }
+                },
+                {
+                  "id": "storeName-28",
+                  "type": "storeName",
+                  "variant": "BistroStoreNameV1",
+                  "label": "Store Name",
+                  "props": {
+                    "text": "",
+                    "textColor": "#0F1419",
+                    "fontSize": 20,
+                    "mobileFontSize": 11
+                  }
+                },
+                {
+                  "id": "navLink-weeklyDeals-23",
+                  "type": "navLink",
+                  "variant": "BistroNavLinkV1",
+                  "label": "Nav · Weekly Deals",
+                  "props": {
+                    "label": "Weekly Deals",
+                    "href": "/collection/weekly-deals",
+                    "navKey": "weeklyDeals",
+                    "textColor": "rgba(245, 240, 232, 0.6)",
+                    "hoverColor": "#f5f0e8",
+                    "underlineColor": "#6d9254",
+                    "fontSize": 10,
+                    "letterSpacing": 0.15,
+                    "visible": true,
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "navLink-ourSpecials-24",
+                  "type": "navLink",
+                  "variant": "BistroNavLinkV1",
+                  "label": "Nav · Our Specials",
+                  "props": {
+                    "label": "Our Specials",
+                    "href": "/#our-specialties",
+                    "navKey": "ourSpecials",
+                    "textColor": "rgba(245, 240, 232, 0.6)",
+                    "hoverColor": "#f5f0e8",
+                    "underlineColor": "#6d9254",
+                    "fontSize": 10,
+                    "letterSpacing": 0.15,
+                    "visible": true,
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "navLink-rewardPoints-25",
+                  "type": "navLink",
+                  "variant": "BistroNavLinkV1",
+                  "label": "Nav · Reward Points",
+                  "props": {
+                    "label": "Reward Points",
+                    "href": "/account/loyalty",
+                    "navKey": "rewardPoints",
+                    "textColor": "rgba(245, 240, 232, 0.6)",
+                    "hoverColor": "#f5f0e8",
+                    "underlineColor": "#6d9254",
+                    "fontSize": 10,
+                    "letterSpacing": 0.15,
+                    "visible": true,
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "navLink-coupons-3",
+                  "type": "navLink",
+                  "variant": "BistroNavLinkV1",
+                  "label": "Nav · Coupons",
+                  "props": {
+                    "label": "Coupons",
+                    "href": "/account/coupons",
+                    "navKey": "coupons"
+                  }
+                },
+                {
+                  "id": "menuButton-31",
+                  "type": "menuButton",
+                  "variant": "MenuButtonV1",
+                  "label": "Menu Button",
+                  "props": {
+                    "label": "View Menu",
+                    "mobileLabel": "Menu",
+                    "href": "#menu",
+                    "textColor": "#0c0c0c",
+                    "backgroundColor": "#6d9254",
+                    "borderColor": "#6d9254",
+                    "visible": true,
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "search-29",
+                  "type": "search",
+                  "variant": "BistroSearchBtnV1",
+                  "label": "Search",
+                  "props": {
+                    "placeholder": "Search Namaste Supermarket…",
+                    "backgroundColor": "#f4f6f0",
+                    "borderColor": "#e2eacc",
+                    "borderWidth": 1,
+                    "textColor": "#0f1419",
+                    "placeholderColor": "#9ca3af",
+                    "icon": "solar:magnifer-linear",
+                    "iconColor": "#1a1f2e",
+                    "mobileSearchIcon": "solar:magnifer-linear",
+                    "mobileSearchIconColor": "#0F1419",
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "account-30",
+                  "type": "account",
+                  "variant": "BistroAccountV1",
+                  "label": "Profile",
+                  "props": {
+                    "isLoggedIn": false,
+                    "userName": "Manohar",
+                    "userEmail": "manohar@getafto.com",
+                    "welcomeLabel": "Welcome",
+                    "loginPrompt": "Login or Sign Up",
+                    "backgroundColor": "rgba(248, 250, 249, 0.5)",
+                    "borderColor": "rgba(232, 245, 232, 0.25)",
+                    "avatarBg": "#6d9254",
+                    "avatarTextColor": "#ffffff",
+                    "loggedOutIcon": "solar:user-circle-linear",
+                    "nameColor": "#0F1419",
+                    "subtitleColor": "#1A1F2E",
+                    "chevronColor": "#1A1F2E",
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "cart-32",
+                  "type": "cart",
+                  "variant": "BistroCartV1",
+                  "label": "Cart Button",
+                  "props": {
+                    "cartTotal": "$0.00",
+                    "cartCount": 0,
+                    "label": "Cart",
+                    "icon": "solar:cart-large-2-linear",
+                    "backgroundColor": "#6d9254",
+                    "textColor": "#ffffff",
+                    "borderColor": "#6d925430",
+                    "mobileIconColor": "#0F1419",
+                    "showCount": true,
+                    "showTotal": false,
+                    "accentColor": "#6d9254"
+                  }
+                },
+                {
+                  "id": "bistroBarStyle-33",
+                  "type": "bistroBarStyle",
+                  "variant": "BistroBarStyleV1",
+                  "label": "Bar Style",
+                  "props": {
+                    "backgroundColor": "#000000",
+                    "backgroundOpacity": 45,
+                    "borderColor": "#6d925414",
+                    "accentColor": "#6d9254",
+                    "minHeightDesktop": 88,
+                    "minHeightMobile": 58,
+                    "mobileBackgroundColor": "#0c0c0c",
+                    "mobileBorderColor": "#6d925440",
+                    "rightNavPadding": 280,
+                    "dividerColor": "#6d925440"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "hero-1781672624130-7iap",
+          "type": "hero",
+          "variant": "HeroV1",
+          "label": "Full Width Hero",
+          "props": {
+            "heightMode": "below-nav",
+            "navOffsetDesktop": 88,
+            "navOffsetMobile": 58,
+            "customHeightDesktop": 600,
+            "customHeightMobile": 480,
+            "childrenByVariant": {
+              "HeroV3": [
+                {
+                  "id": "heroMedia-1",
+                  "type": "heroMedia",
+                  "variant": "HeroMediaV1",
+                  "label": "Media",
+                  "props": {
+                    "mediaType": "video",
+                    "imageUrl": "/uploads/namastesupermarket/1781679965650-zmh2h1.png",
+                    "videoUrl": "/uploads/namastesupermarket/1781680086154-5ylx1q.mp4",
+                    "alt": "Welcome to Namaste Supermarket",
+                    "objectFit": "cover"
+                  }
+                },
+                {
+                  "id": "heroOverlay-2",
+                  "type": "heroOverlay",
+                  "variant": "HeroOverlayV1",
+                  "label": "Overlay",
+                  "props": {
+                    "overlayColor": "#000000",
+                    "overlayOpacity": 35,
+                    "enableGradient": true,
+                    "gradientColor": "#000000"
+                  }
+                },
+                {
+                  "id": "heroTitle-3",
+                  "type": "heroTitle",
+                  "variant": "HeroTitleV1",
+                  "label": "Title",
+                  "props": {
+                    "text": "Welcome to Namaste Supermarket",
+                    "visible": true,
+                    "textColor": "#ffffff",
+                    "fontSize": 48,
+                    "fontSizeMobile": 32,
+                    "fontSizeDesktop": 128,
+                    "fontWeight": 700,
+                    "fontFamily": "Georgia, \"Times New Roman\", serif",
+                    "letterSpacing": -0.01,
+                    "lineHeight": 1,
+                    "textShadow": "",
+                    "maxWidth": 720
+                  }
+                },
+                {
+                  "id": "heroSubtitle-4",
+                  "type": "heroSubtitle",
+                  "variant": "HeroSubtitleV1",
+                  "label": "Subtitle",
+                  "props": {
+                    "text": "",
+                    "visible": true,
+                    "textColor": "rgba(255,255,255,0.88)",
+                    "fontSize": 18,
+                    "fontSizeMobile": 16,
+                    "maxWidth": 560
+                  }
+                },
+                {
+                  "id": "heroButton-5",
+                  "type": "heroButton",
+                  "variant": "HeroButtonV1",
+                  "label": "Button",
+                  "props": {
+                    "label": "Shop Now",
+                    "href": "/products",
+                    "visible": true,
+                    "backgroundColor": "#6d9254",
+                    "textColor": "#ffffff",
+                    "borderRadius": 8,
+                    "fontSize": 16,
+                    "fontSizeMobile": 15,
+                    "paddingX": 24,
+                    "paddingY": 12,
+                    "letterSpacing": 0,
+                    "uppercase": false,
+                    "marginBottom": 32,
+                    "marginBottomMobile": 24,
+                    "marginSide": 32,
+                    "marginSideMobile": 20
+                  }
+                }
+              ],
+              "HeroV4": [
+                {
+                  "id": "heroMedia-1",
+                  "type": "heroMedia",
+                  "variant": "HeroMediaV1",
+                  "label": "Media",
+                  "props": {
+                    "mediaType": "video",
+                    "videoUrl": "https://etlstoreqa.blob.core.windows.net/afto-content-images/videos/Elegant%20restaurant%20interior%20with%20dramatic%20chandelier%20lighting%2C%20dining%20tables%20with%20blue%20tablecloths%2C%20warm%20yellow%20walls%2C%20and%20wooden%20flooring%2C%20smooth%20zoom%20in%20camera%20movement%20(1).mp4",
+                    "alt": "Namaste Supermarket",
+                    "objectFit": "cover"
+                  }
+                },
+                {
+                  "id": "heroOverlay-2",
+                  "type": "heroOverlay",
+                  "variant": "HeroOverlayV1",
+                  "label": "Overlay",
+                  "props": {
+                    "overlayColor": "#000000",
+                    "overlayOpacity": 42,
+                    "enableGradient": true,
+                    "gradientColor": "#000000"
+                  }
+                },
+                {
+                  "id": "heroLogo-3",
+                  "type": "heroLogo",
+                  "variant": "HeroLogoV1",
+                  "label": "Logo",
+                  "props": {
+                    "imageUrl": "https://namastemississauga.ca/logo.png",
+                    "alt": "Namaste Supermarket",
+                    "visible": true,
+                    "widthMin": 100,
+                    "widthMax": 180,
+                    "widthVw": 18,
+                    "marginBottom": 1.5,
+                    "dropShadow": "drop-shadow(0 14px 14px rgba(0,0,0,0.95)) drop-shadow(0 0 20px rgba(239,178,27,0.5))",
+                    "brightness": 1.1
+                  }
+                },
+                {
+                  "id": "heroEyebrow-4",
+                  "type": "heroEyebrow",
+                  "variant": "HeroEyebrowV1",
+                  "label": "Eyebrow",
+                  "props": {
+                    "text": "Fresh  and healthy",
+                    "visible": true,
+                    "textColor": "#6d9254",
+                    "lineColor": "#6d9254",
+                    "letterSpacing": 0.4,
+                    "fontSize": 9,
+                    "fontSizeDesktop": 11,
+                    "lineWidthMobile": 40,
+                    "lineWidthDesktop": 64,
+                    "marginBottom": 1.25,
+                    "textShadow": "0 2px 16px rgba(0,0,0,0.9)"
+                  }
+                },
+                {
+                  "id": "heroTitle-5",
+                  "type": "heroTitle",
+                  "variant": "HeroTitleBistroV1",
+                  "label": "Title",
+                  "props": {
+                    "text": "Fresh Groceries Store",
+                    "visible": true,
+                    "textColor": "#f5f0e8",
+                    "fontSize": 22,
+                    "fontSizeMobile": 27,
+                    "fontSizeDesktop": 68,
+                    "fontWeight": 700,
+                    "fontFamily": "Georgia, \"Times New Roman\", serif",
+                    "letterSpacing": -0.01,
+                    "lineHeight": 1,
+                    "textShadow": "",
+                    "maxWidth": 720
+                  }
+                },
+                {
+                  "id": "heroButton-6",
+                  "type": "heroButton",
+                  "variant": "HeroButtonBistroV1",
+                  "label": "Button",
+                  "props": {
+                    "label": "Order Online",
+                    "href": "/menu",
+                    "visible": true,
+                    "backgroundColor": "#6d9254",
+                    "textColor": "#ffffff",
+                    "borderColor": "#6d9254",
+                    "borderRadius": 8,
+                    "fontSize": 16,
+                    "fontSizeMobile": 15,
+                    "paddingX": 24,
+                    "paddingY": 12,
+                    "letterSpacing": 0.32,
+                    "uppercase": false,
+                    "marginBottom": 32,
+                    "marginBottomMobile": 24,
+                    "marginSide": 32,
+                    "marginSideMobile": 20
+                  }
+                },
+                {
+                  "id": "heroFeature-7",
+                  "type": "heroFeature",
+                  "variant": "HeroFeatureV1",
+                  "label": "Pickup",
+                  "props": {
+                    "featureKey": "pickup",
+                    "label": "Pickup",
+                    "visible": true,
+                    "icon": "solar:bag-4-linear",
+                    "iconColor": "#6d9254",
+                    "ringColor": "#6d925473",
+                    "ringBackground": "#6d92541f",
+                    "textColor": "rgba(245,240,232,0.82)",
+                    "letterSpacing": 0.18,
+                    "fontSize": 10,
+                    "fontSizeDesktop": 11,
+                    "textShadow": "0 1px 8px rgba(0,0,0,0.9)"
+                  }
+                },
+                {
+                  "id": "heroFeature-8",
+                  "type": "heroFeature",
+                  "variant": "HeroFeatureV1",
+                  "label": "Home Delivery",
+                  "props": {
+                    "featureKey": "delivery",
+                    "label": "Delivery",
+                    "visible": true,
+                    "icon": "solar:delivery-linear",
+                    "iconColor": "#6d9254",
+                    "ringColor": "#6d925473",
+                    "ringBackground": "#6d92541f",
+                    "textColor": "rgba(245,240,232,0.82)",
+                    "letterSpacing": 0.18,
+                    "fontSize": 10,
+                    "fontSizeDesktop": 11,
+                    "textShadow": "0 1px 8px rgba(0,0,0,0.9)"
+                  }
+                }
+              ],
+              "HeroV1": [
+                {
+                  "id": "heroMedia-1",
+                  "type": "heroMedia",
+                  "variant": "HeroMediaV1",
+                  "label": "Media",
+                  "props": {
+                    "mediaType": "image",
+                    "alt": "Namaste Supermarket",
+                    "objectFit": "cover"
+                  }
+                },
+                {
+                  "id": "heroOverlay-2",
+                  "type": "heroOverlay",
+                  "variant": "HeroOverlayV1",
+                  "label": "Overlay",
+                  "props": {
+                    "overlayColor": "#000000",
+                    "overlayOpacity": 35,
+                    "enableGradient": true,
+                    "gradientColor": "#000000"
+                  }
+                },
+                {
+                  "id": "heroTitle-3",
+                  "type": "heroTitle",
+                  "variant": "HeroTitleV1",
+                  "label": "Title",
+                  "props": {
+                    "text": "Welcome to Namaste Supermarket",
+                    "visible": true,
+                    "textColor": "#ffffff",
+                    "fontSize": 48,
+                    "fontSizeMobile": 32,
+                    "fontSizeDesktop": 128,
+                    "fontWeight": 700,
+                    "fontFamily": "Georgia, \"Times New Roman\", serif",
+                    "letterSpacing": -0.01,
+                    "lineHeight": 1,
+                    "textShadow": "",
+                    "maxWidth": 720
+                  }
+                },
+                {
+                  "id": "heroSubtitle-4",
+                  "type": "heroSubtitle",
+                  "variant": "HeroSubtitleV1",
+                  "label": "Subtitle",
+                  "props": {
+                    "text": "",
+                    "visible": true,
+                    "textColor": "rgba(255,255,255,0.88)",
+                    "fontSize": 18,
+                    "fontSizeMobile": 16,
+                    "maxWidth": 560
+                  }
+                },
+                {
+                  "id": "heroButton-5",
+                  "type": "heroButton",
+                  "variant": "HeroButtonV1",
+                  "label": "Button",
+                  "props": {
+                    "label": "Shop Now",
+                    "href": "/products",
+                    "visible": true,
+                    "backgroundColor": "#6d9254",
+                    "textColor": "#ffffff",
+                    "borderRadius": 8,
+                    "fontSize": 16,
+                    "fontSizeMobile": 15,
+                    "paddingX": 24,
+                    "paddingY": 12,
+                    "letterSpacing": 0,
+                    "uppercase": false,
+                    "marginBottom": 32,
+                    "marginBottomMobile": 24,
+                    "marginSide": 32,
+                    "marginSideMobile": 20
+                  }
+                }
+              ],
+              "HeroV2": [
+                {
+                  "id": "heroMedia-1",
+                  "type": "heroMedia",
+                  "variant": "HeroMediaV1",
+                  "label": "Media",
+                  "props": {
+                    "mediaType": "image",
+                    "alt": "Namaste Supermarket",
+                    "objectFit": "cover"
+                  }
+                },
+                {
+                  "id": "heroOverlay-2",
+                  "type": "heroOverlay",
+                  "variant": "HeroOverlayV1",
+                  "label": "Overlay",
+                  "props": {
+                    "overlayColor": "#000000",
+                    "overlayOpacity": 35,
+                    "enableGradient": true,
+                    "gradientColor": "#000000"
+                  }
+                },
+                {
+                  "id": "heroTitle-3",
+                  "type": "heroTitle",
+                  "variant": "HeroTitleV1",
+                  "label": "Title",
+                  "props": {
+                    "text": "Welcome to Namaste Supermarket",
+                    "visible": true,
+                    "textColor": "#ffffff",
+                    "fontSize": 48,
+                    "fontSizeMobile": 32,
+                    "fontSizeDesktop": 128,
+                    "fontWeight": 700,
+                    "fontFamily": "Georgia, \"Times New Roman\", serif",
+                    "letterSpacing": -0.01,
+                    "lineHeight": 1,
+                    "textShadow": "",
+                    "maxWidth": 720
+                  }
+                },
+                {
+                  "id": "heroSubtitle-4",
+                  "type": "heroSubtitle",
+                  "variant": "HeroSubtitleV1",
+                  "label": "Subtitle",
+                  "props": {
+                    "text": "",
+                    "visible": true,
+                    "textColor": "rgba(255,255,255,0.88)",
+                    "fontSize": 18,
+                    "fontSizeMobile": 16,
+                    "maxWidth": 560
+                  }
+                },
+                {
+                  "id": "heroButton-5",
+                  "type": "heroButton",
+                  "variant": "HeroButtonV1",
+                  "label": "Button",
+                  "props": {
+                    "label": "Shop Now",
+                    "href": "/products",
+                    "visible": true,
+                    "backgroundColor": "#6d9254",
+                    "textColor": "#ffffff",
+                    "borderRadius": 8,
+                    "fontSize": 16,
+                    "fontSizeMobile": 15,
+                    "paddingX": 24,
+                    "paddingY": 12,
+                    "letterSpacing": 0,
+                    "uppercase": false,
+                    "marginBottom": 32,
+                    "marginBottomMobile": 24,
+                    "marginSide": 32,
+                    "marginSideMobile": 20
+                  }
+                }
+              ]
+            }
+          },
+          "children": [
+            {
+              "id": "heroMedia-1",
+              "type": "heroMedia",
+              "variant": "HeroMediaV1",
+              "label": "Media",
+              "props": {
+                "mediaType": "video",
+                "imageUrl": "/uploads/namastesupermarket/1781685785420-rxwz37.png",
+                "videoUrl": "/uploads/namastesupermarket/1781685792787-45wzn7.mp4",
+                "alt": "Namaste Supermarket",
+                "objectFit": "cover"
+              }
+            },
+            {
+              "id": "heroOverlay-2",
+              "type": "heroOverlay",
+              "variant": "HeroOverlayV1",
+              "label": "Overlay",
+              "props": {
+                "overlayColor": "#000000",
+                "overlayOpacity": 35,
+                "enableGradient": true,
+                "gradientColor": "#000000"
+              }
+            },
+            {
+              "id": "heroTitle-3",
+              "type": "heroTitle",
+              "variant": "HeroTitleV1",
+              "label": "Title",
+              "props": {
+                "text": "Fresh Groceries at store visit here and shop",
+                "visible": true,
+                "textColor": "#ffffff",
+                "fontSize": 48,
+                "fontSizeMobile": 32,
+                "fontSizeDesktop": 128,
+                "fontWeight": 700,
+                "fontFamily": "Georgia, \"Times New Roman\", serif",
+                "letterSpacing": -0.01,
+                "lineHeight": 1,
+                "textShadow": "",
+                "maxWidth": 720
+              }
+            },
+            {
+              "id": "heroSubtitle-4",
+              "type": "heroSubtitle",
+              "variant": "HeroSubtitleV1",
+              "label": "Subtitle",
+              "props": {
+                "text": "",
+                "visible": true,
+                "textColor": "rgba(255,255,255,0.88)",
+                "fontSize": 18,
+                "fontSizeMobile": 16,
+                "maxWidth": 560
+              }
+            },
+            {
+              "id": "heroButton-5",
+              "type": "heroButton",
+              "variant": "HeroButtonV1",
+              "label": "Button",
+              "props": {
+                "label": "Shop Now",
+                "href": "/products",
+                "visible": true,
+                "backgroundColor": "#6d9254",
+                "textColor": "#ffffff",
+                "borderRadius": 8,
+                "fontSize": 16,
+                "fontSizeMobile": 15,
+                "paddingX": 24,
+                "paddingY": 12,
+                "letterSpacing": 0,
+                "uppercase": false,
+                "marginBottom": 32,
+                "marginBottomMobile": 24,
+                "marginSide": 32,
+                "marginSideMobile": 20
+              }
+            }
+          ]
+        },
+        {
+          "id": "offers-1781672248225-616w",
+          "type": "offers",
+          "variant": "OffersV1",
+          "label": "Offers Carousel",
+          "props": {
+            "title": "Special Offers",
+            "slides": []
+          },
+          "children": []
+        },
+        {
+          "id": "categories-6",
+          "type": "categories",
+          "variant": "CategoriesV1",
+          "label": "Categories",
+          "props": {
+            "title": "Shop by Category",
+            "categoryIds": [
+              "cat-spices",
+              "cat-produce",
+              "cat-dairy",
+              "cat-snacks"
+            ]
+          }
+        },
+        {
+          "id": "offers-7",
+          "type": "offers",
+          "variant": "OffersV1",
+          "label": "Offers Carousel",
+          "props": {
+            "title": "Weekly Specials",
+            "slides": [
+              {
+                "headline": "20% Off Spices",
+                "description": "Stock up on masalas this week only",
+                "image": "https://placehold.co/800x500/92400e/white/png?text=20%25+Off+Spices",
+                "link": "/products"
+              },
+              {
+                "headline": "Free Delivery Over $40",
+                "description": "On all orders within 10 miles",
+                "image": "https://placehold.co/800x500/0D9488/white/png?text=Free+Delivery",
+                "link": "/products"
+              }
+            ]
+          }
+        },
+        {
+          "id": "products-8",
+          "type": "productSection",
+          "variant": "ProductSectionV1",
+          "label": "Product Section",
+          "props": {
+            "title": "Featured Products",
+            "productCardVariant": "ProductCardV1"
+          },
+          "children": [
+            {
+              "id": "card-9",
+              "type": "productCard",
+              "variant": "ProductCardV1",
+              "label": "Premium Basmati Rice 5kg",
+              "props": {
+                "productId": "prod-basmati"
+              }
+            },
+            {
+              "id": "card-10",
+              "type": "productCard",
+              "variant": "ProductCardV1",
+              "label": "Pure Cow Ghee 1L",
+              "props": {
+                "productId": "prod-ghee"
+              }
+            },
+            {
+              "id": "card-11",
+              "type": "productCard",
+              "variant": "ProductCardV1",
+              "label": "Alphonso Mangoes (6 pack)",
+              "props": {
+                "productId": "prod-mango"
+              }
+            },
+            {
+              "id": "card-12",
+              "type": "productCard",
+              "variant": "ProductCardV1",
+              "label": "Fresh Paneer 400g",
+              "props": {
+                "productId": "prod-paneer"
+              }
+            }
+          ]
+        },
+        {
+          "id": "testimonials-13",
+          "type": "testimonials",
+          "variant": "TestimonialsV1",
+          "label": "Testimonials",
+          "props": {
+            "title": "What Our Customers Say",
+            "items": [
+              {
+                "quote": "Best Indian grocery store in town. Fresh paneer every time!",
+                "author": "Priya Sharma",
+                "role": "Regular Customer"
+              },
+              {
+                "quote": "Amazing spice selection and friendly staff. Highly recommend.",
+                "author": "Raj Patel",
+                "role": "Local Chef"
+              },
+              {
+                "quote": "Fast delivery and great prices on basmati rice.",
+                "author": "Anita Desai",
+                "role": "Home Cook"
+              }
+            ]
+          }
+        },
+        {
+          "id": "hero-1781671369829-y75c",
+          "type": "hero",
+          "variant": "HeroV1",
+          "label": "Full Width Hero",
+          "props": {},
+          "children": [
+            {
+              "id": "heroMedia-11",
+              "type": "heroMedia",
+              "variant": "HeroMediaV1",
+              "label": "Media",
+              "props": {
+                "mediaType": "image",
+                "alt": "Welcome to Namaste Supermarket",
+                "objectFit": "cover"
+              }
+            },
+            {
+              "id": "heroOverlay-12",
+              "type": "heroOverlay",
+              "variant": "HeroOverlayV1",
+              "label": "Overlay",
+              "props": {
+                "overlayColor": "#000000",
+                "overlayOpacity": 35,
+                "enableGradient": true,
+                "gradientColor": "#000000"
+              }
+            },
+            {
+              "id": "heroTitle-13",
+              "type": "heroTitle",
+              "variant": "HeroTitleV1",
+              "label": "Title",
+              "props": {
+                "text": "Welcome to Namaste Supermarket",
+                "visible": true,
+                "textColor": "#ffffff",
+                "fontSize": 48,
+                "fontSizeMobile": 32,
+                "fontSizeDesktop": 128,
+                "fontWeight": 700,
+                "fontFamily": "Georgia, \"Times New Roman\", serif",
+                "letterSpacing": -0.01,
+                "lineHeight": 1,
+                "textShadow": "",
+                "maxWidth": 720
+              }
+            },
+            {
+              "id": "heroSubtitle-14",
+              "type": "heroSubtitle",
+              "variant": "HeroSubtitleV1",
+              "label": "Subtitle",
+              "props": {
+                "text": "",
+                "visible": true,
+                "textColor": "rgba(255,255,255,0.88)",
+                "fontSize": 18,
+                "fontSizeMobile": 16,
+                "maxWidth": 560
+              }
+            },
+            {
+              "id": "heroButton-15",
+              "type": "heroButton",
+              "variant": "HeroButtonV1",
+              "label": "Button",
+              "props": {
+                "label": "Shop Now",
+                "href": "/products",
+                "visible": true,
+                "backgroundColor": "#6d9254",
+                "textColor": "#ffffff",
+                "borderRadius": 8,
+                "fontSize": 16,
+                "fontSizeMobile": 15,
+                "paddingX": 24,
+                "paddingY": 12,
+                "letterSpacing": 0,
+                "uppercase": false,
+                "marginBottom": 32,
+                "marginBottomMobile": 24,
+                "marginSide": 32,
+                "marginSideMobile": 20
+              }
+            }
+          ]
+        },
+        {
+          "id": "hero-1781671389442-niq9",
+          "type": "hero",
+          "variant": "HeroV1",
+          "label": "Full Width Hero",
+          "props": {},
+          "children": [
+            {
+              "id": "heroMedia-16",
+              "type": "heroMedia",
+              "variant": "HeroMediaV1",
+              "label": "Media",
+              "props": {
+                "mediaType": "image",
+                "alt": "Welcome to Namaste Supermarket",
+                "objectFit": "cover"
+              }
+            },
+            {
+              "id": "heroOverlay-17",
+              "type": "heroOverlay",
+              "variant": "HeroOverlayV1",
+              "label": "Overlay",
+              "props": {
+                "overlayColor": "#000000",
+                "overlayOpacity": 35,
+                "enableGradient": true,
+                "gradientColor": "#000000"
+              }
+            },
+            {
+              "id": "heroTitle-18",
+              "type": "heroTitle",
+              "variant": "HeroTitleV1",
+              "label": "Title",
+              "props": {
+                "text": "Welcome to Namaste Supermarket",
+                "visible": true,
+                "textColor": "#ffffff",
+                "fontSize": 48,
+                "fontSizeMobile": 32,
+                "fontSizeDesktop": 128,
+                "fontWeight": 700,
+                "fontFamily": "Georgia, \"Times New Roman\", serif",
+                "letterSpacing": -0.01,
+                "lineHeight": 1,
+                "textShadow": "",
+                "maxWidth": 720
+              }
+            },
+            {
+              "id": "heroSubtitle-19",
+              "type": "heroSubtitle",
+              "variant": "HeroSubtitleV1",
+              "label": "Subtitle",
+              "props": {
+                "text": "",
+                "visible": true,
+                "textColor": "rgba(255,255,255,0.88)",
+                "fontSize": 18,
+                "fontSizeMobile": 16,
+                "maxWidth": 560
+              }
+            },
+            {
+              "id": "heroButton-20",
+              "type": "heroButton",
+              "variant": "HeroButtonV1",
+              "label": "Button",
+              "props": {
+                "label": "Shop Now",
+                "href": "/products",
+                "visible": true,
+                "backgroundColor": "#6d9254",
+                "textColor": "#ffffff",
+                "borderRadius": 8,
+                "fontSize": 16,
+                "fontSizeMobile": 15,
+                "paddingX": 24,
+                "paddingY": 12,
+                "letterSpacing": 0,
+                "uppercase": false,
+                "marginBottom": 32,
+                "marginBottomMobile": 24,
+                "marginSide": 32,
+                "marginSideMobile": 20
+              }
+            }
+          ]
+        },
+        {
+          "id": "categories-1781671530102-2jqi",
+          "type": "categories",
+          "variant": "CategoriesV1",
+          "label": "Category Grid",
+          "props": {
+            "title": "Shop by Category",
+            "categoryIds": [
+              "cat-spices",
+              "cat-produce",
+              "cat-dairy",
+              "cat-snacks"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "footer-14",
+          "type": "footer",
+          "variant": "FooterV1",
+          "label": "Footer"
+        }
+      ]
+    },
+    {
+      "id": "products",
+      "title": "Products",
+      "slug": "/products",
+      "tree": [
+        {
+          "id": "header-1",
+          "type": "header",
+          "variant": "HeaderV1",
+          "label": "Header",
+          "children": [
+            {
+              "id": "logo-2",
+              "type": "logo",
+              "variant": "LogoV1",
+              "label": "Logo"
+            },
+            {
+              "id": "search-3",
+              "type": "search",
+              "variant": "SearchV1",
+              "label": "Search",
+              "props": {
+                "placeholder": "Search products..."
+              }
+            },
+            {
+              "id": "navLink-home-23",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Home",
+              "props": {
+                "navKey": "home",
+                "label": "Home",
+                "href": "/",
+                "icon": "solar:home-2-bold",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "navLink-orders-24",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Orders",
+              "props": {
+                "navKey": "orders",
+                "label": "Orders",
+                "href": "/orders",
+                "icon": "solar:box-bold",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "navLink-rewards-25",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Rewards",
+              "props": {
+                "navKey": "rewards",
+                "label": "Rewards",
+                "href": "#rewards",
+                "icon": "solar:medal-ribbons-star-bold",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "navLink-coupons-8",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Coupons",
+              "props": {
+                "navKey": "coupons",
+                "label": "Coupons",
+                "href": "#coupons",
+                "icon": "solar:ticket-linear",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "account-7",
+              "type": "account",
+              "variant": "AccountGroceryV1",
+              "label": "Profile Card",
+              "props": {
+                "isLoggedIn": false,
+                "userName": "Manohar",
+                "userEmail": "manohar@getafto.com",
+                "welcomeLabel": "Welcome",
+                "loginPrompt": "Login or Sign Up"
+              }
+            },
+            {
+              "id": "themeToggle-27",
+              "type": "themeToggle",
+              "variant": "ThemeToggleV1",
+              "label": "Theme Toggle",
+              "props": {
+                "backgroundColor": "#6d9254",
+                "knobColor": "#ffffff",
+                "icon": "solar:sun-bold",
+                "iconColor": "#6d9254",
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "cart-4",
+              "type": "cart",
+              "variant": "CartV1",
+              "label": "Cart"
+            },
+            {
+              "id": "groceryBarStyle-28",
+              "type": "groceryBarStyle",
+              "variant": "GroceryBarStyleV1",
+              "label": "Bar Style",
+              "props": {
+                "backgroundColor": "#f7faf5",
+                "borderColor": "#e5ebe0",
+                "mobileSearchBg": "#f0f4ec"
+              }
+            }
+          ]
+        },
+        {
+          "id": "products-5",
+          "type": "productSection",
+          "variant": "ProductSectionV1",
+          "label": "All Products",
+          "props": {
+            "title": "All Products",
+            "productCardVariant": "ProductCardV1"
+          },
+          "children": [
+            {
+              "id": "card-6",
+              "type": "productCard",
+              "variant": "ProductCardV1",
+              "label": "Premium Basmati Rice 5kg",
+              "props": {
+                "productId": "prod-basmati"
+              }
+            },
+            {
+              "id": "card-7",
+              "type": "productCard",
+              "variant": "ProductCardV1",
+              "label": "Pure Cow Ghee 1L",
+              "props": {
+                "productId": "prod-ghee"
+              }
+            },
+            {
+              "id": "card-8",
+              "type": "productCard",
+              "variant": "ProductCardV1",
+              "label": "Alphonso Mangoes (6 pack)",
+              "props": {
+                "productId": "prod-mango"
+              }
+            },
+            {
+              "id": "card-9",
+              "type": "productCard",
+              "variant": "ProductCardV1",
+              "label": "Fresh Paneer 400g",
+              "props": {
+                "productId": "prod-paneer"
+              }
+            }
+          ]
+        },
+        {
+          "id": "footer-10",
+          "type": "footer",
+          "variant": "FooterV1",
+          "label": "Footer"
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "title": "Orders",
+      "slug": "/orders",
+      "tree": [
+        {
+          "id": "header-1",
+          "type": "header",
+          "variant": "HeaderV1",
+          "label": "Header",
+          "children": [
+            {
+              "id": "logo-2",
+              "type": "logo",
+              "variant": "LogoV1",
+              "label": "Logo"
+            },
+            {
+              "id": "search-3",
+              "type": "search",
+              "variant": "SearchV1",
+              "label": "Search",
+              "props": {
+                "placeholder": "Search products..."
+              }
+            },
+            {
+              "id": "navLink-home-29",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Home",
+              "props": {
+                "navKey": "home",
+                "label": "Home",
+                "href": "/",
+                "icon": "solar:home-2-bold",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "navLink-orders-30",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Orders",
+              "props": {
+                "navKey": "orders",
+                "label": "Orders",
+                "href": "/orders",
+                "icon": "solar:box-bold",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "navLink-rewards-31",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Rewards",
+              "props": {
+                "navKey": "rewards",
+                "label": "Rewards",
+                "href": "#rewards",
+                "icon": "solar:medal-ribbons-star-bold",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "navLink-coupons-9",
+              "type": "navLink",
+              "variant": "NavLinkV1",
+              "label": "Nav · Coupons",
+              "props": {
+                "navKey": "coupons",
+                "label": "Coupons",
+                "href": "#coupons",
+                "icon": "solar:ticket-linear",
+                "textColor": "#4b5563",
+                "hoverColor": "#6d9254",
+                "iconColor": "#4b5563",
+                "fontSize": 13,
+                "visible": true,
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "account-11",
+              "type": "account",
+              "variant": "AccountGroceryV1",
+              "label": "Profile Card",
+              "props": {
+                "isLoggedIn": false,
+                "userName": "Manohar",
+                "userEmail": "manohar@getafto.com",
+                "welcomeLabel": "Welcome",
+                "loginPrompt": "Login or Sign Up"
+              }
+            },
+            {
+              "id": "themeToggle-33",
+              "type": "themeToggle",
+              "variant": "ThemeToggleV1",
+              "label": "Theme Toggle",
+              "props": {
+                "backgroundColor": "#6d9254",
+                "knobColor": "#ffffff",
+                "icon": "solar:sun-bold",
+                "iconColor": "#6d9254",
+                "accentColor": "#6d9254"
+              }
+            },
+            {
+              "id": "cart-4",
+              "type": "cart",
+              "variant": "CartV1",
+              "label": "Cart"
+            },
+            {
+              "id": "groceryBarStyle-34",
+              "type": "groceryBarStyle",
+              "variant": "GroceryBarStyleV1",
+              "label": "Bar Style",
+              "props": {
+                "backgroundColor": "#f7faf5",
+                "borderColor": "#e5ebe0",
+                "mobileSearchBg": "#f0f4ec"
+              }
+            }
+          ]
+        },
+        {
+          "id": "orders-5",
+          "type": "orders",
+          "variant": "OrdersV1",
+          "label": "Orders",
+          "props": {
+            "title": "Your Orders"
+          }
+        },
+        {
+          "id": "footer-6",
+          "type": "footer",
+          "variant": "FooterV1",
+          "label": "Footer"
+        }
+      ]
+    }
+  ]
+}

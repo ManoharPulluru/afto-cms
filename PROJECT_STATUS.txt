@@ -1,0 +1,284 @@
+================================================================================
+AFTO STOREFRONT PLATFORM — PROJECT STATUS (POC)
+Generated: June 2026
+Repository: payload-cms (folder name is legacy; Payload CMS was removed)
+================================================================================
+
+1. EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+This is a proof-of-concept (POC) single-tenant e-commerce storefront platform
+built for Afto. One codebase deploys one customer store per environment.
+Website configuration (theme, products, homepage layout) lives in local JSON
+files (POC stand-in for a future database). A custom "Studio" UI lets merchants
+log in, preview their live site on the left, and edit content/controls on the
+right.
+
+The app is WORKING locally. Build passes. Dev server runs on port 3000.
+
+Initial version used Payload CMS v3 + PostgreSQL + subdomain multi-tenancy.
+That was replaced per product direction with: JSON config, single domain,
+env-only deployment identity, custom Studio (no Payload admin).
+
+
+2. TECH STACK (CURRENT)
+--------------------------------------------------------------------------------
+- Next.js 15.3.9 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 3
+- Local JSON files as data store (POC)
+- Node.js 20.9+ required
+- No Payload CMS (removed)
+- No PostgreSQL required for current POC (docker-compose.yml may still exist
+  from earlier iteration but is not used)
+
+
+3. ARCHITECTURE
+--------------------------------------------------------------------------------
+
+Deployment model:
+  - One customer = one deployment (e.g. Azure App Service)
+  - Env var STORE_SLUG selects which JSON file to load (dev convenience)
+  - Env does NOT contain website config (colors, products, etc.)
+  - Production: each customer gets own deploy + own JSON file (later: own DB)
+
+Data layer (POC):
+  - Path: data/stores/{slug}.json
+  - Contains: store info, users, categories, products, pages with block layout
+  - Read via src/lib/store.ts (fs read/write)
+  - Schema defined in src/lib/types/store.ts (designed to map to future DB)
+
+Routes:
+  - /                     Public storefront homepage
+  - /[slug]               Other storefront pages from JSON (e.g. /products if page exists)
+  - /studio/login         Merchant login
+  - /studio               Split-pane editor (protected)
+  - /api/store            GET store JSON, PATCH save store JSON (auth required for PATCH)
+  - /api/auth/login       POST login
+  - /api/auth/logout      POST logout
+  - /unregister-sw.html   Manual tool to clear stale browser service workers
+
+Auth:
+  - Session cookie: studio_session
+  - HMAC-signed token via Web Crypto API (Edge-compatible for middleware)
+  - Users stored in each store's JSON file
+  - Demo credentials: manohar@getafto.com / manohar@getafto.com
+
+
+4. WHAT IS BUILT AND WORKING
+--------------------------------------------------------------------------------
+
+Storefront (public):
+  - Dynamic theme via CSS variables (primaryColor, secondaryColor from JSON)
+  - Header, Footer, responsive layout
+  - Block-based homepage renderer (PageRenderer)
+  - Reusable tenant-agnostic components:
+      HeroBanner, VideoBanner, ProductGrid, CategoriesBlock,
+      OffersCarousel, Testimonials, ProductCard, CategoryCard
+
+Block types supported in JSON layout:
+  - heroBanner       (title, subtitle, backgroundImage, buttonText, buttonLink)
+  - videoBanner      (title, videoUrl)
+  - productGrid      (title, productIds[])
+  - categoriesBlock  (title, categoryIds[])
+  - offersCarousel   (title, slides[])
+  - testimonials     (title, items[])
+
+Studio (merchant admin):
+  - Login page at /studio/login
+  - Split UI: live iframe preview (left) + control panels (right)
+  - Tabs: Theme, Homepage layout, Products, Categories
+  - Save Changes writes back to JSON and refreshes preview
+  - Middleware protects /studio/* (except login)
+
+Sample stores (JSON):
+  - data/stores/namastesupermarket.json  (default, Indian grocery theme, teal)
+  - data/stores/sbm.json                 (SBM Retail demo, red theme)
+
+Utilities:
+  - UnregisterServiceWorker component (clears stale SW from old localhost apps)
+  - public/service-worker.js self-destruct script
+  - public/unregister-sw.html manual cleanup page
+
+
+5. ENVIRONMENT VARIABLES
+--------------------------------------------------------------------------------
+STORE_SLUG=namastesupermarket   # Which JSON file in data/stores/ to load
+STUDIO_SECRET=...                 # HMAC secret for session tokens
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+
+6. HOW TO RUN
+--------------------------------------------------------------------------------
+  nvm use 20
+  npm install
+  cp .env.example .env
+  npm run dev
+
+  Storefront:  http://localhost:3000
+  Studio:      http://localhost:3000/studio/login
+  Login:       manohar@getafto.com / manohar@getafto.com
+
+  Switch store locally: change STORE_SLUG in .env, restart dev server.
+
+  Production build: npm run build && npm start
+
+
+7. PROJECT STRUCTURE
+--------------------------------------------------------------------------------
+payload-cms/
+├── data/stores/              # Store config JSON (POC database)
+│   ├── namastesupermarket.json
+│   └── sbm.json
+├── public/
+│   ├── service-worker.js     # Clears old service workers
+│   └── unregister-sw.html    # Manual SW cleanup page
+├── src/
+│   ├── app/
+│   │   ├── (storefront)/     # Public website routes
+│   │   │   ├── layout.tsx    # ThemeProvider + Header + Footer
+│   │   │   ├── page.tsx      # Homepage
+│   │   │   └── [...slug]/    # Other pages
+│   │   ├── studio/           # Merchant studio + login
+│   │   ├── api/              # store + auth APIs
+│   │   ├── layout.tsx        # Root layout
+│   │   └── globals.css
+│   ├── components/           # Storefront UI + studio panels
+│   ├── lib/
+│   │   ├── types/store.ts    # TypeScript schema
+│   │   ├── store.ts          # JSON load/save
+│   │   ├── session.ts        # Web Crypto session tokens
+│   │   ├── auth.ts           # User auth helpers
+│   │   ├── theme.ts          # Theme CSS variables
+│   │   └── render-store-page.tsx
+│   ├── providers/ThemeProvider.tsx
+│   └── middleware.ts         # Protects /studio routes
+├── package.json
+├── README.md
+└── PROJECT_STATUS.txt        # This file
+
+
+8. JSON SCHEMA (per store file)
+--------------------------------------------------------------------------------
+{
+  "store": {
+    "name": string,
+    "slug": string,
+    "primaryColor": string (hex),
+    "secondaryColor": string (hex),
+    "logo": string (URL, optional)
+  },
+  "users": [
+    { "email": string, "password": string, "name": string }
+  ],
+  "categories": [
+    { "id": string, "name": string, "image": string (URL, optional) }
+  ],
+  "products": [
+    { "id": string, "name": string, "price": number, "image": string, "description": string }
+  ],
+  "pages": [
+    {
+      "slug": string,          // "home" for homepage
+      "title": string,
+      "layout": [ /* block objects */ ]
+    }
+  ]
+}
+
+
+9. DESIGN DECISIONS / EVOLUTION
+--------------------------------------------------------------------------------
+Original POC spec:
+  - Payload CMS v3 + PostgreSQL
+  - Subdomain multi-tenancy (sbm.localhost, fresh.localhost, food.localhost)
+  - Payload admin for content management
+
+Current direction (implemented):
+  - NO subdomains — one main domain per customer deployment
+  - NO website config in env — only STORE_SLUG + secrets in env
+  - JSON files as POC database (easy migration to Postgres later)
+  - Custom Studio instead of Payload admin
+  - Split-pane UX: live preview left, controls right
+  - Single-tenant per deploy (not shared multi-tenant DB)
+
+Rationale:
+  - Simpler ops for first real customer (e.g. namastesupermarket)
+  - Merchants get visual editor, not technical CMS chrome
+  - JSON schema mirrors future DB tables for clean migration
+
+
+10. NOT YET IMPLEMENTED / OUT OF SCOPE FOR POC
+--------------------------------------------------------------------------------
+  - Real database (Postgres / Payload CMS) — JSON only for now
+  - Production auth (hashed passwords, OAuth) — plaintext in JSON for demo
+  - Image upload — URLs only, no file upload in Studio
+  - Draft/publish workflow — saves are live immediately
+  - Shopping cart / checkout / payments
+  - Product detail pages, category listing pages (routes exist but pages may 404
+    unless defined in JSON pages array)
+  - Add block UI in Studio (can edit/reorder/remove, not add new block types via UI)
+  - Azure deployment automation
+  - Custom domain per tenant in single app (each customer = separate deploy instead)
+  - Role-based access (super-admin vs merchant)
+  - API for external integrations
+  - Tests (unit, e2e)
+
+
+11. KNOWN ISSUES / FIXES APPLIED
+--------------------------------------------------------------------------------
+  - Stale service worker from previous localhost:3000 apps caused 404 on CSS/JS.
+    Fixed with UnregisterServiceWorker, public/service-worker.js, unregister-sw.html.
+  - Optional catch-all route [[...slug]] conflicted with /studio. Replaced with
+    separate / page and /[...slug] routes.
+  - Middleware used Node crypto (not Edge-compatible). Fixed with Web Crypto API
+    in src/lib/session.ts.
+  - Broken Unsplash image URLs in JSON. Replaced with placehold.co URLs.
+
+
+12. MIGRATION PATH (RECOMMENDED NEXT STEPS)
+--------------------------------------------------------------------------------
+Phase 1 (DONE):     JSON + Studio + single-tenant deploy model
+Phase 2 (NEXT):     Postgres with same schema; seed from JSON
+Phase 3:            Studio writes to DB API instead of fs.writeFile
+Phase 4:            Hashed passwords, proper auth, image upload (Azure Blob)
+Phase 5:            CI/CD per customer deploy with Azure App Settings for STORE_SLUG
+Phase 6 (OPTIONAL): Re-introduce Payload CMS as headless backend if needed
+
+
+13. ADDING A NEW CUSTOMER (CURRENT PROCESS)
+--------------------------------------------------------------------------------
+1. Copy data/stores/namastesupermarket.json to data/stores/newcustomer.json
+2. Edit store name, slug, colors, products, homepage layout, users
+3. Set STORE_SLUG=newcustomer in .env (or in Azure App Settings for prod deploy)
+4. Deploy same codebase as separate instance
+5. Map custom domain to that deployment
+6. Merchant logs in at /studio/login with credentials from JSON users array
+
+
+14. KEY FILES TO READ FOR CONTEXT
+--------------------------------------------------------------------------------
+  src/lib/types/store.ts          — Data model
+  src/lib/store.ts                — JSON persistence
+  src/components/PageRenderer.tsx — Block → component mapping
+  src/components/studio/StudioShell.tsx — Studio main UI
+  data/stores/namastesupermarket.json — Primary demo store
+  src/middleware.ts               — Studio route protection
+  README.md                       — Setup instructions
+
+
+15. CURRENT STATUS SUMMARY
+--------------------------------------------------------------------------------
+STATUS:     POC complete and working locally
+VERSION:    2.0.0 (package.json name: afto-storefront)
+BUILD:      Passes (npm run build)
+DATA:       Local JSON (2 sample stores)
+AUTH:       Demo-only (plain password in JSON)
+ADMIN:      Custom Studio at /studio (not Payload)
+MULTI-TENANT: No — one store per deployment via STORE_SLUG
+READY FOR:  Demo, UX review, schema validation, DB migration planning
+NOT READY FOR: Production launch without DB, secure auth, and deployment pipeline
+
+================================================================================
+END OF STATUS DOCUMENT
+================================================================================
