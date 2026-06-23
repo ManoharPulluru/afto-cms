@@ -20,8 +20,8 @@ import path from 'path'
 import pg from 'pg'
 import { uuidv7 } from 'uuidv7'
 import { fileURLToPath } from 'url'
-import { componentRegistry } from '../src/lib/registry/index.ts'
-import type { StoreData } from '../src/lib/types/store.ts'
+import { componentRegistry } from '../src/lib/registry/index'
+import type { StoreData } from '../src/lib/types/store'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.join(__dirname, '..')

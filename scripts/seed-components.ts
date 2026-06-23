@@ -4,7 +4,7 @@ import dns from 'node:dns'
 import 'dotenv/config'
 import pg from 'pg'
 import { uuidv7 } from 'uuidv7'
-import { componentRegistry } from '../src/lib/registry/index.ts'
+import { componentRegistry } from '../src/lib/registry/index'
 
 dns.setDefaultResultOrder('ipv4first')
 

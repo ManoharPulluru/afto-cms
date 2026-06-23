@@ -8,7 +8,7 @@ import dns from 'node:dns'
 import 'dotenv/config'
 import pg from 'pg'
 import { uuidv7 } from 'uuidv7'
-import type { StoreData } from '../src/lib/types/store.ts'
+import type { StoreData } from '../src/lib/types/store'
 
 dns.setDefaultResultOrder('ipv4first')
 
